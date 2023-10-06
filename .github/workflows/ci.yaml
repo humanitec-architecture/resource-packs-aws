@@ -1,0 +1,18 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: ~1.5
+      - name: Terraform Format Check
+        run: make fmt-check
+      - name: Terraform Validate
+        run: make validate
