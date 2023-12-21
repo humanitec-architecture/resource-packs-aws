@@ -1,0 +1,14 @@
+formatter: "markdown table"
+
+output:
+  file: "./README.md"
+
+sort:
+  enabled: true
+  by: required
+
+
+settings:
+  anchor: false
+  hide-empty: true
+  lockfile: false

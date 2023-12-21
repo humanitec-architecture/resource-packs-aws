@@ -1,5 +1,18 @@
 TF_DIRS = $(patsubst %/main.tf, %, $(shell find . -type d -name .terraform -prune -o -name 'main.tf' -print))
 VALIDATE_TF_DIRS = $(addprefix validate-,$(TF_DIRS))
+DOCS_TF_DIRS = $(addprefix docs-,$(TF_DIRS))
+
+
+# Generate docs for a terraform directories
+$(DOCS_TF_DIRS): docs-%:
+	@echo "Docs $*"
+	terraform-docs --config docs/.terraform-docs.yaml $*
+	terraform-docs --config docs/.terraform-docs-example.yaml $*
+
+# Generate docs
+.PHONY: docs
+docs: $(DOCS_TF_DIRS)
+	@echo "All docs generated"
 
 # Format all terraform files
 fmt:
