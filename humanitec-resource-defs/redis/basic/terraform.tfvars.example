@@ -1,0 +1,33 @@
+
+# AWS Access Key
+access_key = ""
+
+# AWS ElastiCache node type
+node_type = "cache.t4g.micro"
+
+# Number of AWS ElastiCache clusters
+num_cache_clusters = 1
+
+# AWS ElastiCache parameter group name
+parameter_group_name = "default.redis7.cluster.on"
+
+# Prefix for all resources
+prefix = ""
+
+# AWS Region
+region = ""
+
+# AWS Resource Pack git branch
+resource_packs_aws_rev = "refs/heads/main"
+
+# AWS Resource Pack git url
+resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+
+# AWS Secret Key
+secret_key = ""
+
+# List of AWS security group IDs to use for the AWS ElastiCache cluster
+security_group_ids = ""
+
+# Name of the AWS ElastiCache subnet group to use
+subnet_group_name = ""

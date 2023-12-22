@@ -1,0 +1,36 @@
+
+# AWS Access Key
+access_key = ""
+
+app_id        = ""
+env_id        = ""
+force_destroy = true
+
+# AWS ElastiCache node type
+node_type = "cache.t4g.micro"
+
+# Number of AWS ElastiCache clusters
+num_cache_clusters = 1
+
+# AWS ElastiCache parameter group name
+parameter_group_name = "default.redis7.cluster.on"
+
+# Port to use for the AWS ElastiCache cluster
+port = 6379
+
+# Prefix for all resources
+prefix = ""
+
+# AWS Region
+region = ""
+
+res_id = ""
+
+# AWS Secret Key
+secret_key = ""
+
+# List of AWS security group IDs to use for the AWS ElastiCache cluster
+security_group_ids = ""
+
+# Name of the AWS ElastiCache subnet group to use
+subnet_group_name = ""
