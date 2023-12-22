@@ -36,6 +36,7 @@ module "redis" {
 
   access_key             = var.access_key
   secret_key             = var.secret_key
+  resource_packs_aws_url = var.resource_packs_aws_url
   resource_packs_aws_rev = var.resource_packs_aws_rev
   region                 = var.region
 

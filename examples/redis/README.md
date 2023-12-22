@@ -3,14 +3,16 @@
 
 | Name | Version |
 |------|---------|
+| terraform | >= 1.3.0 |
 | aws | ~> 5.0 |
+| humanitec | ~> 0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | aws | ~> 5.0 |
-| humanitec | n/a |
+| humanitec | ~> 0 |
 
 ## Modules
 

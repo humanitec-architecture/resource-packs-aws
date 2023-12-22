@@ -1,11 +1,16 @@
 <!-- BEGIN_TF_DOCS -->
+## Requirements
 
+| Name | Version |
+|------|---------|
+| terraform | >= 1.3.0 |
+| humanitec | ~> 0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| humanitec | n/a |
+| humanitec | ~> 0 |
 
 ## Resources
 
@@ -18,7 +23,6 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | access\_key | n/a | `string` | n/a | yes |
-| humanitec\_organization | n/a | `string` | n/a | yes |
 | oidc\_provider | n/a | `string` | n/a | yes |
 | oidc\_provider\_arn | n/a | `string` | n/a | yes |
 | policy\_classes | n/a | `list(string)` | n/a | yes |

@@ -10,7 +10,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| sqs | terraform-aws-modules/sqs/aws | n/a |
+| sqs | terraform-aws-modules/sqs/aws | ~> 4 |
 
 ## Inputs
 
