@@ -1,5 +1,4 @@
 access_key                    = ""
-humanitec_organization        = ""
 prefix                        = ""
 region                        = ""
 resource_packs_aws_rev        = ""

@@ -1,11 +1,16 @@
 <!-- BEGIN_TF_DOCS -->
+## Requirements
 
+| Name | Version |
+|------|---------|
+| terraform | >= 1.3.0 |
+| humanitec | ~> 0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| humanitec | n/a |
+| humanitec | ~> 0 |
 
 ## Resources
 
@@ -18,7 +23,6 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | access\_key | n/a | `string` | n/a | yes |
-| humanitec\_organization | n/a | `string` | n/a | yes |
 | prefix | n/a | `string` | n/a | yes |
 | region | n/a | `string` | n/a | yes |
 | resource\_packs\_aws\_rev | n/a | `string` | n/a | yes |

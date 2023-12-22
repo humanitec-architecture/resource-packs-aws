@@ -18,11 +18,6 @@ variable "region" {
   type        = string
 }
 
-variable "force_destroy" {
-  type    = bool
-  default = true
-}
-
 variable "app_id" {
   type = string
 }
