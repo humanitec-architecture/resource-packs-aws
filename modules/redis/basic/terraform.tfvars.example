@@ -2,9 +2,8 @@
 # AWS Access Key
 access_key = ""
 
-app_id        = ""
-env_id        = ""
-force_destroy = true
+app_id = ""
+env_id = ""
 
 # AWS ElastiCache node type
 node_type = "cache.t4g.micro"

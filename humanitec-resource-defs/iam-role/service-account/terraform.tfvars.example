@@ -1,5 +1,4 @@
 access_key             = ""
-humanitec_organization = ""
 oidc_provider          = ""
 oidc_provider_arn      = ""
 policy_classes         = ""

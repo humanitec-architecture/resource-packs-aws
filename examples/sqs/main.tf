@@ -10,10 +10,6 @@ variable "region" {
   default = "eu-central-1"
 }
 
-variable "humanitec_organization" {
-  type = string
-}
-
 variable "resource_packs_aws_rev" {
   type    = string
   default = "refs/heads/main"
@@ -65,7 +61,6 @@ module "s3_basic" {
   access_key             = var.access_key
   secret_key             = var.secret_key
   resource_packs_aws_rev = var.resource_packs_aws_rev
-  humanitec_organization = var.humanitec_organization
   region                 = var.region
   policy_classes         = [local.s3_admin_policy_class]
 
@@ -84,7 +79,6 @@ module "iam_policy_s3_admin" {
   access_key             = var.access_key
   secret_key             = var.secret_key
   resource_packs_aws_rev = var.resource_packs_aws_rev
-  humanitec_organization = var.humanitec_organization
   region                 = var.region
 
   prefix                       = local.res_def_prefix
@@ -110,7 +104,6 @@ module "sqs_basic" {
   access_key             = var.access_key
   secret_key             = var.secret_key
   resource_packs_aws_rev = var.resource_packs_aws_rev
-  humanitec_organization = var.humanitec_organization
   region                 = var.region
   policy_classes         = [local.sqs_admin_policy_class]
 
@@ -129,7 +122,6 @@ module "iam_policy_sqs_admin" {
   access_key             = var.access_key
   secret_key             = var.secret_key
   resource_packs_aws_rev = var.resource_packs_aws_rev
-  humanitec_organization = var.humanitec_organization
   region                 = var.region
 
   prefix                        = local.res_def_prefix
@@ -148,7 +140,6 @@ module "iam_role_service_account" {
   access_key             = var.access_key
   secret_key             = var.secret_key
   resource_packs_aws_rev = var.resource_packs_aws_rev
-  humanitec_organization = var.humanitec_organization
   region                 = var.region
 
   oidc_provider     = var.oidc_provider

@@ -2,8 +2,6 @@ locals {
   k8s_service_account_name = "${var.app_id}-${var.env_id}-${trimprefix(var.res_id, "modules.")}"
 }
 
-data "aws_caller_identity" "current" {}
-
 resource "aws_iam_role" "main" {
   name_prefix = var.prefix
   // below uses StringLike to allow wildcards for multiple service accounts within the same namespace for workloads
@@ -13,7 +11,7 @@ resource "aws_iam_role" "main" {
       {
         "Effect" : "Allow",
         "Principal" : {
-          "Federated" : "${var.oidc_provider_arn}"
+          "Federated" : var.oidc_provider_arn,
         },
         "Action" : "sts:AssumeRoleWithWebIdentity",
         "Condition" : {

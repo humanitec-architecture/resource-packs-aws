@@ -37,3 +37,10 @@ jobs:
 
       - name: Terraform Validate
         run: make validate
+
+      - uses: terraform-linters/setup-tflint@v4
+        with:
+          tflint_version: v0.49.0
+
+      - name: Lint
+        run: make lint
