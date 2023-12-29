@@ -1,0 +1,8 @@
+access_key    = ""
+app_id        = ""
+env_id        = ""
+force_destroy = true
+prefix        = ""
+region        = ""
+res_id        = ""
+secret_key    = ""

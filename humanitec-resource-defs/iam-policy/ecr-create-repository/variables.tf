@@ -1,7 +1,3 @@
-variable "humanitec_organization" {
-  type = string
-}
-
 variable "prefix" {
   type = string
 }

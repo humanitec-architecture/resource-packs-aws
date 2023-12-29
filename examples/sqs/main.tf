@@ -10,10 +10,6 @@ variable "region" {
   default = "eu-central-1"
 }
 
-variable "humanitec_organization" {
-  type = string
-}
-
 variable "resource_packs_aws_rev" {
   type    = string
   default = "refs/heads/main"
@@ -42,7 +38,7 @@ resource "humanitec_application" "example" {
 }
 
 module "k8s_service_account" {
-  source = "../humanitec-resource-defs/k8s/service-account"
+  source = "../../humanitec-resource-defs/k8s/service-account"
 
   prefix = local.res_def_prefix
 }
@@ -60,12 +56,11 @@ locals {
 }
 
 module "s3_basic" {
-  source = "../humanitec-resource-defs/s3/basic"
+  source = "../../humanitec-resource-defs/s3/basic"
 
   access_key             = var.access_key
   secret_key             = var.secret_key
   resource_packs_aws_rev = var.resource_packs_aws_rev
-  humanitec_organization = var.humanitec_organization
   region                 = var.region
   policy_classes         = [local.s3_admin_policy_class]
 
@@ -79,12 +74,11 @@ resource "humanitec_resource_definition_criteria" "s3_basic" {
 }
 
 module "iam_policy_s3_admin" {
-  source = "../humanitec-resource-defs/iam-policy/s3-admin"
+  source = "../../humanitec-resource-defs/iam-policy/s3-admin"
 
   access_key             = var.access_key
   secret_key             = var.secret_key
   resource_packs_aws_rev = var.resource_packs_aws_rev
-  humanitec_organization = var.humanitec_organization
   region                 = var.region
 
   prefix                       = local.res_def_prefix
@@ -105,12 +99,11 @@ locals {
 }
 
 module "sqs_basic" {
-  source = "../humanitec-resource-defs/sqs/basic"
+  source = "../../humanitec-resource-defs/sqs/basic"
 
   access_key             = var.access_key
   secret_key             = var.secret_key
   resource_packs_aws_rev = var.resource_packs_aws_rev
-  humanitec_organization = var.humanitec_organization
   region                 = var.region
   policy_classes         = [local.sqs_admin_policy_class]
 
@@ -124,12 +117,11 @@ resource "humanitec_resource_definition_criteria" "sqs_basic" {
 }
 
 module "iam_policy_sqs_admin" {
-  source = "../humanitec-resource-defs/iam-policy/sqs-admin"
+  source = "../../humanitec-resource-defs/iam-policy/sqs-admin"
 
   access_key             = var.access_key
   secret_key             = var.secret_key
   resource_packs_aws_rev = var.resource_packs_aws_rev
-  humanitec_organization = var.humanitec_organization
   region                 = var.region
 
   prefix                        = local.res_def_prefix
@@ -143,12 +135,11 @@ resource "humanitec_resource_definition_criteria" "iam_policy_sqs_admin" {
 }
 
 module "iam_role_service_account" {
-  source = "../humanitec-resource-defs/iam-role/service-account"
+  source = "../../humanitec-resource-defs/iam-role/service-account"
 
   access_key             = var.access_key
   secret_key             = var.secret_key
   resource_packs_aws_rev = var.resource_packs_aws_rev
-  humanitec_organization = var.humanitec_organization
   region                 = var.region
 
   oidc_provider     = var.oidc_provider
@@ -163,7 +154,7 @@ resource "humanitec_resource_definition_criteria" "iam_role_service_account" {
 }
 
 module "workload" {
-  source = "../humanitec-resource-defs/workload/service-account"
+  source = "../../humanitec-resource-defs/workload/service-account"
 
   prefix = local.res_def_prefix
 }
