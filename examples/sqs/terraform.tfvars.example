@@ -1,7 +1,13 @@
-access_key             = ""
-name                   = "item-list"
-oidc_provider          = ""
-oidc_provider_arn      = ""
-region                 = "eu-central-1"
+access_key        = ""
+name              = "item-list"
+oidc_provider     = ""
+oidc_provider_arn = ""
+region            = "eu-central-1"
+
+# AWS Resource Pack git branch
 resource_packs_aws_rev = "refs/heads/main"
-secret_key             = ""
+
+# AWS Resource Pack git url
+resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+
+secret_key = ""

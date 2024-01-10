@@ -12,7 +12,6 @@ variable "resource_packs_aws_url" {
 variable "resource_packs_aws_rev" {
   description = "AWS Resource Pack git branch"
   type        = string
-  default     = "refs/heads/main"
 }
 
 variable "access_key" {

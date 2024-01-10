@@ -23,7 +23,7 @@ resource "humanitec_resource_definition" "main" {
       source = {
         path = "modules/sqs/basic"
         rev  = var.resource_packs_aws_rev
-        url  = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+        url  = var.resource_packs_aws_url
       }
 
       variables = {

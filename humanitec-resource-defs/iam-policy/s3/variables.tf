@@ -25,10 +25,7 @@ variable "region" {
   type = string
 }
 
-variable "oidc_provider" {
-  type = string
-}
-
-variable "oidc_provider_arn" {
-  type = string
+variable "policy" {
+  description = "Name of the exposed policy"
+  type        = string
 }

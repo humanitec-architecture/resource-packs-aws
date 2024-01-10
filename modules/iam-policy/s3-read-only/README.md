@@ -4,34 +4,37 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
-| humanitec | ~> 0 |
+| aws | ~> 5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| humanitec | ~> 0 |
+| aws | ~> 5.0 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [humanitec_resource_definition.main](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
+| [aws_iam_policy.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_policy_document.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | access\_key | n/a | `string` | n/a | yes |
+| app\_id | n/a | `string` | n/a | yes |
+| env\_id | n/a | `string` | n/a | yes |
 | prefix | n/a | `string` | n/a | yes |
 | region | n/a | `string` | n/a | yes |
-| resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | n/a | yes |
+| res\_id | n/a | `string` | n/a | yes |
+| s3\_bucket\_arn | n/a | `string` | n/a | yes |
 | secret\_key | n/a | `string` | n/a | yes |
-| resource\_packs\_aws\_url | AWS Resource Pack git url | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| id | n/a |
+| arn | n/a |
 <!-- END_TF_DOCS -->

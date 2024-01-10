@@ -30,6 +30,7 @@
 | name | n/a | `string` | n/a | yes |
 | prefix | n/a | `string` | n/a | yes |
 | region | n/a | `string` | n/a | yes |
+| resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | n/a | yes |
 | secret\_key | n/a | `string` | n/a | yes |
 | subnets | n/a | `set(string)` | n/a | yes |
 | vpc | n/a | `string` | n/a | yes |
@@ -47,8 +48,7 @@
 | engine\_version | n/a | `string` | `"14.7"` | no |
 | group\_family | n/a | `string` | `"aurora-postgresql14"` | no |
 | instances | n/a | `map(any)` | <pre>{<br>  "1": {<br>    "db_parameter_group_name": "default.aurora-postgresql14",<br>    "instance_class": "db.r5.2xlarge",<br>    "publicly_accessible": true<br>  },<br>  "2": {<br>    "identifier": "static-member-1",<br>    "instance_class": "db.r5.2xlarge"<br>  }<br>}</pre> | no |
-| resource\_packs\_aws\_rev | n/a | `string` | `"ref/heads/main"` | no |
-| resource\_packs\_aws\_url | n/a | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
+| resource\_packs\_aws\_url | AWS Resource Pack git url | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
 | security\_group\_rules | n/a | `any` | `{}` | no |
 | skip\_final\_snapshot | n/a | `bool` | `true` | no |
 | storage\_encrypted | n/a | `bool` | `true` | no |
