@@ -1,0 +1,24 @@
+
+# AWS Access Key
+access_key = ""
+
+# The name of the hosted zone in which this record set will reside.
+hosted_zone = ""
+
+# The IPv4 address that the DNS name should resolve to.
+ip_address = ""
+
+# Name of the example application
+name = ""
+
+# AWS Region
+region = ""
+
+# AWS Resource Pack git branch
+resource_packs_aws_rev = "refs/heads/main"
+
+# AWS Resource Pack git url
+resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+
+# AWS Secret Key
+secret_key = ""
