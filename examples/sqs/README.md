@@ -1,3 +1,22 @@
+# AWS SQS
+
+This example configures an SQS queue resource definition, with two different access policies:
+
+* `basic-publisher` (allowed to send messages)
+* `basic-consumer` (allowed to receive messages)
+
+Those resources can be used in your score file like:
+
+```yaml
+resources:
+  ...
+  sqs:
+    type: sqs
+    class: basic-publisher
+```
+
+The workload service account will automatically be assigned the necessary AWS IAM Role with the selected IAM Policy.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
