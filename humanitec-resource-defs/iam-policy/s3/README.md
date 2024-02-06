@@ -27,7 +27,7 @@
 | prefix | n/a | `string` | n/a | yes |
 | region | n/a | `string` | n/a | yes |
 | resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | n/a | yes |
-| s3\_resource\_class | n/a | `string` | n/a | yes |
+| s3\_resource\_class | The class of the S3 resource | `string` | n/a | yes |
 | secret\_key | n/a | `string` | n/a | yes |
 | resource\_packs\_aws\_url | AWS Resource Pack git url | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
 

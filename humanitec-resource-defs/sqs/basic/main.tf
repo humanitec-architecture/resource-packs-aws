@@ -4,13 +4,6 @@ resource "humanitec_resource_definition" "main" {
   name        = "${var.prefix}sqs-basic"
   type        = "sqs"
 
-  provision = {
-    for s in var.policy_classes : "aws-policy.${s}" => {
-      match_dependents = true
-      is_dependent     = false
-    }
-  }
-
   driver_inputs = {
     secrets_string = jsonencode({
       variables = {

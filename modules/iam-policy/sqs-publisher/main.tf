@@ -1,7 +1,7 @@
 data "aws_iam_policy_document" "main" {
   statement {
     actions = [
-      "sqs:*",
+      "sqs:SendMessage",
     ]
 
     resources = [
@@ -12,7 +12,7 @@ data "aws_iam_policy_document" "main" {
 
 
 resource "aws_iam_policy" "main" {
-  name        = "${var.prefix}sqs-admin"
-  description = "Allows full access to SQS queue"
+  name        = "${var.prefix}sqs-publisher"
+  description = "Allows publishing to SQS queue"
   policy      = data.aws_iam_policy_document.main.json
 }

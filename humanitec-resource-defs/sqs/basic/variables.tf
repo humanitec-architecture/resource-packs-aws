@@ -24,7 +24,3 @@ variable "secret_key" {
 variable "region" {
   type = string
 }
-
-variable "policy_classes" {
-  type = list(string)
-}

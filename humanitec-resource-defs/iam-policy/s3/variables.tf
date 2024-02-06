@@ -29,3 +29,8 @@ variable "policy" {
   description = "Name of the exposed policy"
   type        = string
 }
+
+variable "s3_resource_class" {
+  description = "The class of the S3 resource"
+  type        = string
+}

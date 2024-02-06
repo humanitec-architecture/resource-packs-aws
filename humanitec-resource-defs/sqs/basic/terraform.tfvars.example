@@ -1,7 +1,6 @@
-access_key     = ""
-policy_classes = ""
-prefix         = ""
-region         = ""
+access_key = ""
+prefix     = ""
+region     = ""
 
 # AWS Resource Pack git branch
 resource_packs_aws_rev = ""

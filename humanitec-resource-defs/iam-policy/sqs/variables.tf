@@ -25,6 +25,12 @@ variable "region" {
   type = string
 }
 
-variable "sqs_resource_definition_class" {
-  type = string
+variable "policy" {
+  description = "Name of the exposed policy"
+  type        = string
+}
+
+variable "sqs_resource_class" {
+  description = "The class of the SQS resource"
+  type        = string
 }

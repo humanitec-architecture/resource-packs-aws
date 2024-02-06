@@ -12,5 +12,7 @@ resource_packs_aws_rev = ""
 # AWS Resource Pack git url
 resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
 
+# The class of the S3 resource
 s3_resource_class = ""
-secret_key        = ""
+
+secret_key = ""

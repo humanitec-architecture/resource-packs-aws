@@ -1,7 +1,7 @@
 resource "humanitec_resource_definition" "main" {
   driver_type = "humanitec/terraform"
-  id          = "${var.prefix}iam-policy-s3-${var.policy}"
-  name        = "${var.prefix}iam-policy-s3-${var.policy}"
+  id          = "${var.prefix}iam-policy-sqs-${var.policy}"
+  name        = "${var.prefix}iam-policy-sqs-${var.policy}"
   type        = "aws-policy"
 
   driver_inputs = {
@@ -14,7 +14,7 @@ resource "humanitec_resource_definition" "main" {
 
     values_string = jsonencode({
       source = {
-        path = "modules/iam-policy/s3-${var.policy}"
+        path = "modules/iam-policy/sqs-${var.policy}"
         rev  = var.resource_packs_aws_rev
         url  = var.resource_packs_aws_url
       }
@@ -26,7 +26,7 @@ resource "humanitec_resource_definition" "main" {
         res_id        = "$${context.res.id}"
         app_id        = "$${context.app.id}"
         env_id        = "$${context.env.id}"
-        s3_bucket_arn = "$${resources['s3.${var.s3_resource_class}'].outputs.arn}"
+        sqs_queue_arn = "$${resources['sqs.${var.sqs_resource_class}'].outputs.arn}"
       }
     })
   }

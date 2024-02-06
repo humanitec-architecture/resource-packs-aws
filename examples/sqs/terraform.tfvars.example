@@ -1,10 +1,15 @@
+
+# AWS Access Key
 access_key = ""
 
 # Name of the EKS cluster
 cluster_name = ""
 
-name   = "item-list"
-region = "eu-central-1"
+# Name of the example application
+name = "sqs-test"
+
+# AWS Region
+region = ""
 
 # AWS Resource Pack git branch
 resource_packs_aws_rev = "refs/heads/main"
@@ -12,4 +17,5 @@ resource_packs_aws_rev = "refs/heads/main"
 # AWS Resource Pack git url
 resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
 
+# AWS Secret Key
 secret_key = ""
