@@ -23,8 +23,7 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | access\_key | n/a | `string` | n/a | yes |
-| oidc\_provider | n/a | `string` | n/a | yes |
-| oidc\_provider\_arn | n/a | `string` | n/a | yes |
+| cluster\_name | n/a | `string` | n/a | yes |
 | prefix | n/a | `string` | n/a | yes |
 | region | n/a | `string` | n/a | yes |
 | resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | n/a | yes |

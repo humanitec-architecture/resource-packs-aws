@@ -10,6 +10,11 @@ variable "region" {
   default = "eu-central-1"
 }
 
+variable "cluster_name" {
+  description = "Name of the EKS cluster"
+  type        = string
+}
+
 variable "resource_packs_aws_url" {
   description = "AWS Resource Pack git url"
   type        = string
@@ -20,14 +25,6 @@ variable "resource_packs_aws_rev" {
   description = "AWS Resource Pack git branch"
   type        = string
   default     = "refs/heads/main"
-}
-
-variable "oidc_provider" {
-  type = string
-}
-
-variable "oidc_provider_arn" {
-  type = string
 }
 
 variable "name" {
@@ -108,9 +105,8 @@ module "iam_role_service_account" {
   secret_key = var.secret_key
   region     = var.region
 
-  oidc_provider     = var.oidc_provider
-  oidc_provider_arn = var.oidc_provider_arn
-  prefix            = local.res_def_prefix
+  cluster_name = var.cluster_name
+  prefix       = local.res_def_prefix
 }
 
 resource "humanitec_resource_definition_criteria" "iam_role_service_account" {

@@ -20,12 +20,11 @@ resource "humanitec_resource_definition" "main" {
       }
 
       variables = {
-        region            = var.region,
-        prefix            = "${var.prefix}$${context.res.id}"
-        policy_arns       = "$${resources.workload>aws-policy.outputs.arn}"
-        oidc_provider     = var.oidc_provider
-        oidc_provider_arn = var.oidc_provider_arn
-        namespace         = "$${resources.k8s-namespace#k8s-namespace.outputs.namespace}"
+        region       = var.region,
+        prefix       = "${var.prefix}$${context.res.id}"
+        policy_arns  = "$${resources.workload>aws-policy.outputs.arn}"
+        cluster_name = var.cluster_name
+        namespace    = "$${resources.k8s-namespace#k8s-namespace.outputs.namespace}"
 
         res_id = "$${context.res.id}"
         app_id = "$${context.app.id}"

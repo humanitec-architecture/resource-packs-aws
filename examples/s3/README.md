@@ -63,8 +63,7 @@ The workload service account will automatically be assigned the necessary AWS IA
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | access\_key | AWS Access Key | `string` | n/a | yes |
-| oidc\_provider | IAM OIDC Provider in the format "oidc.eks.region-code.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE" | `string` | n/a | yes |
-| oidc\_provider\_arn | IAM OIDC Provider ARN in the format "arn:aws:iam::111122223333:oidc-provider/oidc.eks.region-code.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE" | `string` | n/a | yes |
+| cluster\_name | Name of the EKS cluster | `string` | n/a | yes |
 | region | AWS Region | `string` | n/a | yes |
 | secret\_key | AWS Secret Key | `string` | n/a | yes |
 | name | Name of the example application | `string` | `"s3-test"` | no |

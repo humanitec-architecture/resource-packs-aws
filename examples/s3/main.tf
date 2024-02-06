@@ -152,9 +152,8 @@ module "iam_role_service_account" {
   secret_key = var.secret_key
   region     = var.region
 
-  oidc_provider     = var.oidc_provider
-  oidc_provider_arn = var.oidc_provider_arn
-  prefix            = local.res_def_prefix
+  cluster_name = var.cluster_name
+  prefix       = local.res_def_prefix
 }
 
 resource "humanitec_resource_definition_criteria" "iam_role_service_account" {

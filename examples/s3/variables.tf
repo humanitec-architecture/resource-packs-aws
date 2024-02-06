@@ -13,13 +13,8 @@ variable "region" {
   type        = string
 }
 
-variable "oidc_provider" {
-  description = "IAM OIDC Provider in the format \"oidc.eks.region-code.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE\""
-  type        = string
-}
-
-variable "oidc_provider_arn" {
-  description = "IAM OIDC Provider ARN in the format \"arn:aws:iam::111122223333:oidc-provider/oidc.eks.region-code.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE\""
+variable "cluster_name" {
+  description = "Name of the EKS cluster"
   type        = string
 }
 

@@ -2,14 +2,11 @@
 # AWS Access Key
 access_key = ""
 
+# Name of the EKS cluster
+cluster_name = ""
+
 # Name of the example application
 name = "s3-test"
-
-# IAM OIDC Provider in the format "oidc.eks.region-code.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE"
-oidc_provider = ""
-
-# IAM OIDC Provider ARN in the format "arn:aws:iam::111122223333:oidc-provider/oidc.eks.region-code.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE"
-oidc_provider_arn = ""
 
 # AWS Region
 region = ""

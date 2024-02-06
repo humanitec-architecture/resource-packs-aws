@@ -1,8 +1,7 @@
-access_key        = ""
-oidc_provider     = ""
-oidc_provider_arn = ""
-prefix            = ""
-region            = ""
+access_key   = ""
+cluster_name = ""
+prefix       = ""
+region       = ""
 
 # AWS Resource Pack git branch
 resource_packs_aws_rev = ""

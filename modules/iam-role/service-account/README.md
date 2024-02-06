@@ -16,6 +16,7 @@
 
 | Name | Type |
 |------|------|
+| [aws_eks_pod_identity_association.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_pod_identity_association) | resource |
 | [aws_iam_role.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy_attachment.policies](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_policy_document.assume_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
@@ -26,10 +27,9 @@
 |------|-------------|------|---------|:--------:|
 | access\_key | n/a | `string` | n/a | yes |
 | app\_id | n/a | `string` | n/a | yes |
+| cluster\_name | n/a | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
 | namespace | n/a | `string` | n/a | yes |
-| oidc\_provider | n/a | `string` | n/a | yes |
-| oidc\_provider\_arn | n/a | `string` | n/a | yes |
 | policy\_arns | n/a | `set(string)` | n/a | yes |
 | prefix | n/a | `string` | n/a | yes |
 | region | n/a | `string` | n/a | yes |

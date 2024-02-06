@@ -25,10 +25,6 @@ variable "region" {
   type = string
 }
 
-variable "oidc_provider" {
-  type = string
-}
-
-variable "oidc_provider_arn" {
+variable "cluster_name" {
   type = string
 }
