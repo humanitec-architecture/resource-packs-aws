@@ -25,10 +25,12 @@ locals {
 module "sqs_basic" {
   source = "../../humanitec-resource-defs/sqs/basic"
 
-  access_key             = var.access_key
-  secret_key             = var.secret_key
+  resource_packs_aws_url = var.resource_packs_aws_url
   resource_packs_aws_rev = var.resource_packs_aws_rev
-  region                 = var.region
+
+  access_key = var.access_key
+  secret_key = var.secret_key
+  region     = var.region
 
   prefix = local.res_def_prefix
 }
@@ -48,10 +50,12 @@ resource "humanitec_resource_definition_criteria" "sqs_basic" {
 module "iam_policy_sqs_publisher" {
   source = "../../humanitec-resource-defs/iam-policy/sqs"
 
-  access_key             = var.access_key
-  secret_key             = var.secret_key
+  resource_packs_aws_url = var.resource_packs_aws_url
   resource_packs_aws_rev = var.resource_packs_aws_rev
-  region                 = var.region
+
+  access_key = var.access_key
+  secret_key = var.secret_key
+  region     = var.region
 
   prefix             = local.res_def_prefix
   policy             = "publisher"
@@ -93,7 +97,7 @@ module "iam_policy_sqs_consumer" {
   secret_key = var.secret_key
   region     = var.region
 
-  policy = "read-only"
+  policy = "consumer"
 
   prefix = local.res_def_prefix
 
