@@ -28,6 +28,7 @@
 | region | n/a | `string` | n/a | yes |
 | resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | n/a | yes |
 | secret\_key | n/a | `string` | n/a | yes |
+| policy\_classes | Humanitec aws-policy classes to provision by default for this role. | `list(string)` | `[]` | no |
 | resource\_packs\_aws\_url | AWS Resource Pack git url | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
 
 ## Outputs

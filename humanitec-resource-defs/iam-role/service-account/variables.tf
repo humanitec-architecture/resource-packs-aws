@@ -28,3 +28,9 @@ variable "region" {
 variable "cluster_name" {
   type = string
 }
+
+variable "policy_classes" {
+  description = "Humanitec aws-policy classes to provision by default for this role."
+  type        = list(string)
+  default     = []
+}
