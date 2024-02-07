@@ -5,9 +5,6 @@ access_key = ""
 # The name of the hosted zone in which this record set will reside.
 hosted_zone = ""
 
-# The IPv4 address that the DNS name should resolve to.
-ip_address = ""
-
 # Name of the example application
 name = ""
 

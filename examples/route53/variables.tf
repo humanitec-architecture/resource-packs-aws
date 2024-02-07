@@ -34,8 +34,3 @@ variable "hosted_zone" {
   description = "The name of the hosted zone in which this record set will reside."
   type        = string
 }
-
-variable "ip_address" {
-  description = "The IPv4 address that the DNS name should resolve to."
-  type        = string
-}

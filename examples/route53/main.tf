@@ -20,8 +20,6 @@ module "route53" {
 
   hosted_zone = var.hosted_zone
   subdomain   = "$${context.env.id}-${var.name}"
-
-  ip_address = var.ip_address
 }
 
 resource "humanitec_resource_definition_criteria" "redis" {
