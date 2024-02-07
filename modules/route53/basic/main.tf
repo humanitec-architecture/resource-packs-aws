@@ -1,6 +1,6 @@
 locals {
-  types            = ["A", "AAAA", "CNAME", "ALIAS"]
-  provided_records = [var.ip_address, var.ipv6_address, var.name, var.alias_name]
+  types            = ["A", "AAAA", "CNAME"]
+  provided_records = [var.ip_address, var.ipv6_address, var.name]
   records          = [for r in local.provided_records : r if r != ""]
 
   # If every record is empty, then the type is A, but this will be caught below.
@@ -12,7 +12,7 @@ data "aws_route53_zone" "hosted_zone" {
 }
 
 resource "aws_route53_record" "non-alias-record" {
-  count = local.type != "ALIAS" ? 1 : 0
+  count = var.aws_hosted_zone == "" ? 1 : 0
 
   name    = "${var.subdomain}.${data.aws_route53_zone.hosted_zone.name}"
   zone_id = data.aws_route53_zone.hosted_zone.id
@@ -30,27 +30,22 @@ resource "aws_route53_record" "non-alias-record" {
 }
 
 resource "aws_route53_record" "alias-record" {
-  count = local.type == "ALIAS" ? 1 : 0
+  count = var.aws_hosted_zone != "" ? 1 : 0
 
   name    = "${var.subdomain}.${data.aws_route53_zone.hosted_zone.name}"
   zone_id = data.aws_route53_zone.hosted_zone.id
   type    = "A"
 
   alias {
-    name                   = var.alias_name
-    zone_id                = var.alias_zone_id
-    evaluate_target_health = var.alias_evaluate_target_health
+    name                   = var.name
+    zone_id                = var.aws_hosted_zone
+    evaluate_target_health = false
   }
 
   lifecycle {
     precondition {
       condition     = length(local.records) > 0
       error_message = "Only one of ip_address, ipv6_address, name or alias is supported."
-    }
-
-    precondition {
-      condition     = var.alias_name != "" && var.alias_zone_id != "" && var.alias_evaluate_target_health != ""
-      error_message = "All of alias_name, alias_zone_id and alias_evaluate_target_health has to be provided"
     }
   }
 }

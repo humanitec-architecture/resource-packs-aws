@@ -26,9 +26,6 @@ resource "humanitec_resource_definition" "main" {
         env_id                       = "$${context.env.id}"
         hosted_zone_id               = var.hosted_zone_id
         subdomain                    = var.subdomain
-        alias_name                   = var.alias_name
-        alias_zone_id                = var.alias_zone_id
-        alias_evaluate_target_health = var.alias_evaluate_target_health
       }
     })
   }
