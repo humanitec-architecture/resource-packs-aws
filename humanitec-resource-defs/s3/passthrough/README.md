@@ -22,12 +22,9 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| access\_key | n/a | `string` | n/a | yes |
+| policy\_resource\_class | n/a | `string` | n/a | yes |
 | prefix | n/a | `string` | n/a | yes |
-| region | n/a | `string` | n/a | yes |
-| resource\_packs\_aws\_rev | n/a | `string` | n/a | yes |
-| secret\_key | n/a | `string` | n/a | yes |
-| sqs\_resource\_definition\_class | n/a | `string` | n/a | yes |
+| s3\_resource\_class | n/a | `string` | n/a | yes |
 
 ## Outputs
 

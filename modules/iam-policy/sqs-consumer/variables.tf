@@ -2,7 +2,7 @@ variable "prefix" {
   type = string
 }
 
-variable "resource_packs_aws_rev" {
+variable "region" {
   type = string
 }
 
@@ -14,10 +14,18 @@ variable "secret_key" {
   type = string
 }
 
-variable "region" {
+variable "sqs_queue_arn" {
   type = string
 }
 
-variable "s3_resource_definition_class" {
+variable "app_id" {
+  type = string
+}
+
+variable "env_id" {
+  type = string
+}
+
+variable "res_id" {
   type = string
 }

@@ -29,6 +29,7 @@
 | password | n/a | `string` | n/a | yes |
 | prefix | n/a | `string` | n/a | yes |
 | region | n/a | `string` | n/a | yes |
+| resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | n/a | yes |
 | secret\_key | n/a | `string` | n/a | yes |
 | subnet\_ids | n/a | `set(string)` | n/a | yes |
 | username | n/a | `string` | n/a | yes |
@@ -57,8 +58,7 @@
 | performance\_insights\_enabled | n/a | `bool` | `true` | no |
 | performance\_insights\_retention\_period | n/a | `number` | `7` | no |
 | port | n/a | `number` | `5432` | no |
-| resource\_packs\_aws\_rev | n/a | `string` | `"ref/heads/main"` | no |
-| resource\_packs\_aws\_url | n/a | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
+| resource\_packs\_aws\_url | AWS Resource Pack git url | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
 | skip\_final\_snapshot | n/a | `bool` | `true` | no |
 | type | n/a | `string` | `"postgres"` | no |
 

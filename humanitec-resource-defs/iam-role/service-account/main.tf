@@ -4,13 +4,6 @@ resource "humanitec_resource_definition" "main" {
   name        = "${var.prefix}aws-workload-role"
   type        = "aws-role"
 
-  provision = {
-    for s in var.policy_classes : "aws-policy.${s}" => {
-      match_dependents = true
-      is_dependent     = false
-    }
-  }
-
   driver_inputs = {
     secrets_string = jsonencode({
       variables = {
@@ -23,16 +16,15 @@ resource "humanitec_resource_definition" "main" {
       source = {
         path = "modules/iam-role/service-account"
         rev  = var.resource_packs_aws_rev
-        url  = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+        url  = var.resource_packs_aws_url
       }
 
       variables = {
-        region            = var.region,
-        prefix            = "${var.prefix}$${context.res.id}"
-        policy_arns       = "$${resources.workload>aws-policy.outputs.arn}"
-        oidc_provider     = var.oidc_provider
-        oidc_provider_arn = var.oidc_provider_arn
-        namespace         = "$${resources.k8s-namespace#k8s-namespace.outputs.namespace}"
+        region       = var.region,
+        prefix       = "${var.prefix}$${context.res.id}"
+        policy_arns  = "$${resources.workload>aws-policy.outputs.arn}"
+        cluster_name = var.cluster_name
+        namespace    = "$${resources.k8s-namespace#k8s-namespace.outputs.namespace}"
 
         res_id = "$${context.res.id}"
         app_id = "$${context.app.id}"

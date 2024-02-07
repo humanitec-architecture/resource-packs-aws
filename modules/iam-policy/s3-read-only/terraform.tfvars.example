@@ -1,0 +1,8 @@
+access_key    = ""
+app_id        = ""
+env_id        = ""
+prefix        = ""
+region        = ""
+res_id        = ""
+s3_bucket_arn = ""
+secret_key    = ""
