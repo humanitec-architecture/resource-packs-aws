@@ -30,7 +30,7 @@ variable "name" {
   type        = string
 }
 
-variable "hosted_zone" {
-  description = "The name of the hosted zone in which this record set will reside."
+variable "hosted_zone_id" {
+  description = "The id of the hosted zone in which this record set will reside."
   type        = string
 }

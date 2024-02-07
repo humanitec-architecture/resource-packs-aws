@@ -18,8 +18,8 @@ module "route53" {
 
   prefix = local.res_def_prefix
 
-  hosted_zone = var.hosted_zone
-  subdomain   = "$${context.env.id}-${var.name}"
+  hosted_zone_id = var.hosted_zone_id
+  subdomain      = "$${context.env.id}-${var.name}"
 }
 
 resource "humanitec_resource_definition_criteria" "redis" {

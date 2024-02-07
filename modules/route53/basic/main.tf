@@ -8,13 +8,13 @@ locals {
 }
 
 data "aws_route53_zone" "hosted_zone" {
-  name = var.hosted_zone
+  id = var.hosted_zone_id
 }
 
 resource "aws_route53_record" "non-alias-record" {
   count = local.type != "ALIAS" ? 1 : 0
 
-  name    = "${var.subdomain}.${var.hosted_zone}"
+  name    = "${var.subdomain}.${data.aws_route53_zone.hosted_zone.name}"
   zone_id = data.aws_route53_zone.hosted_zone.id
   type    = local.type
 
@@ -32,7 +32,7 @@ resource "aws_route53_record" "non-alias-record" {
 resource "aws_route53_record" "alias-record" {
   count = local.type == "ALIAS" ? 1 : 0
 
-  name    = "${var.subdomain}.${var.hosted_zone}"
+  name    = "${var.subdomain}.${data.aws_route53_zone.hosted_zone.name}"
   zone_id = data.aws_route53_zone.hosted_zone.id
   type    = "A"
 

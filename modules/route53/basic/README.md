@@ -27,7 +27,7 @@
 | access\_key | AWS Access Key | `string` | n/a | yes |
 | app\_id | n/a | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
-| hosted\_zone | The name of the hosted zone in which this record set will reside. | `string` | n/a | yes |
+| hosted\_zone\_id | The id of the hosted zone in which this record set will reside. | `string` | n/a | yes |
 | region | AWS Region | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
 | secret\_key | AWS Secret Key | `string` | n/a | yes |

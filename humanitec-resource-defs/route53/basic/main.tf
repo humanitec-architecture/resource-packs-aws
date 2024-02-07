@@ -24,11 +24,8 @@ resource "humanitec_resource_definition" "main" {
         res_id                       = "$${context.res.id}"
         app_id                       = "$${context.app.id}"
         env_id                       = "$${context.env.id}"
-        hosted_zone                  = var.hosted_zone
+        hosted_zone_id               = var.hosted_zone_id
         subdomain                    = var.subdomain
-        ip_address                   = var.ip_address
-        ipv6_address                 = var.ipv6_address
-        name                         = var.name
         alias_name                   = var.alias_name
         alias_zone_id                = var.alias_zone_id
         alias_evaluate_target_health = var.alias_evaluate_target_health

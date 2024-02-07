@@ -11,17 +11,8 @@ alias_name = ""
 # Hosted zone ID for a CloudFront distribution, S3 bucket, ELB, or Route 53 hosted zone.
 alias_zone_id = ""
 
-# The name of the hosted zone in which this record set will reside.
-hosted_zone = ""
-
-# The IPv4 address that the DNS name should resolve to.
-ip_address = ""
-
-# The IPv6 address that the DNS name should resolve to.
-ipv6_address = ""
-
-# A valid fully qualified domain name that the DNS name should resolve to.
-name = ""
+# The id of the hosted zone in which this record set will reside.
+hosted_zone_id = ""
 
 # Prefix for all resources
 prefix = ""

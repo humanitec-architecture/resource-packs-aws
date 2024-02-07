@@ -30,7 +30,7 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | access\_key | AWS Access Key | `string` | n/a | yes |
-| hosted\_zone | The name of the hosted zone in which this record set will reside. | `string` | n/a | yes |
+| hosted\_zone\_id | The id of the hosted zone in which this record set will reside. | `string` | n/a | yes |
 | name | Name of the example application | `string` | n/a | yes |
 | region | AWS Region | `string` | n/a | yes |
 | secret\_key | AWS Secret Key | `string` | n/a | yes |
