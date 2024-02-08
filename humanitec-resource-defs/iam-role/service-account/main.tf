@@ -1,15 +1,19 @@
+locals {
+  co_provisioned = {
+    for s in var.policy_classes : "aws-policy.${s}" => {
+      match_dependents = true
+      is_dependent     = false
+    }
+  }
+}
+
 resource "humanitec_resource_definition" "main" {
   driver_type = "humanitec/terraform"
   id          = "${var.prefix}aws-workload-role"
   name        = "${var.prefix}aws-workload-role"
   type        = "aws-role"
 
-  provision = {
-    for s in var.policy_classes : "aws-policy.${s}" => {
-      match_dependents = true
-      is_dependent     = false
-    }
-  }
+  provision = length(var.policy_classes) > 0 ? local.co_provisioned : null
 
   driver_inputs = {
     secrets_string = jsonencode({
