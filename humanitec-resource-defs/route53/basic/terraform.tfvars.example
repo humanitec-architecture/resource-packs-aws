@@ -2,15 +2,6 @@
 # AWS Access Key
 access_key = ""
 
-# Set to true if you want Route 53 to determine whether to respond to DNS queries using this resource record set by checking the health of the resource record set.
-alias_evaluate_target_health = false
-
-# DNS domain name for a CloudFront distribution, S3 bucket, ELB, or another resource record set in this hosted zone.
-alias_name = ""
-
-# Hosted zone ID for a CloudFront distribution, S3 bucket, ELB, or Route 53 hosted zone.
-alias_zone_id = ""
-
 # The id of the hosted zone in which this record set will reside.
 hosted_zone_id = ""
 
@@ -28,6 +19,3 @@ resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-pac
 
 # AWS Secret Key
 secret_key = ""
-
-# The subdomain of the DNS name that the DNS record is for.
-subdomain = ""

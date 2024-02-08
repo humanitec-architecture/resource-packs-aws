@@ -20,12 +20,12 @@ resource "humanitec_resource_definition" "main" {
       }
 
       variables = {
-        region                       = var.region
-        res_id                       = "$${context.res.id}"
-        app_id                       = "$${context.app.id}"
-        env_id                       = "$${context.env.id}"
-        hosted_zone_id               = var.hosted_zone_id
-        subdomain                    = "$${context.app.id}-$${context.env.id}"
+        region         = var.region
+        res_id         = "$${context.res.id}"
+        app_id         = "$${context.app.id}"
+        env_id         = "$${context.env.id}"
+        hosted_zone_id = var.hosted_zone_id
+        subdomain      = "$${context.app.id}-$${context.env.id}"
       }
     })
   }
