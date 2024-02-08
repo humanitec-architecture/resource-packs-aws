@@ -11,35 +11,21 @@ data "aws_route53_zone" "hosted_zone" {
   zone_id = var.hosted_zone_id
 }
 
-resource "aws_route53_record" "non-alias-record" {
-  count = var.aws_hosted_zone == "" ? 1 : 0
-
+resource "aws_route53_record" "main" {
   name    = "${var.subdomain}.${data.aws_route53_zone.hosted_zone.name}"
   zone_id = data.aws_route53_zone.hosted_zone.id
-  type    = local.type
+  type    = var.aws_hosted_zone == "" ? local.type : "A"
 
-  ttl     = 300
-  records = local.records
+  ttl     = var.aws_hosted_zone == "" ? 300 : null
+  records = var.aws_hosted_zone == "" ? local.records : null
 
-  lifecycle {
-    precondition {
-      condition     = length(local.records) > 0
-      error_message = "Only one of ip_address, ipv6_address, name or alias is supported."
+  dynamic "alias" {
+    for_each = var.aws_hosted_zone != "" ? [true] : []
+    content {
+      name                   = var.name
+      zone_id                = var.aws_hosted_zone
+      evaluate_target_health = false
     }
-  }
-}
-
-resource "aws_route53_record" "alias-record" {
-  count = var.aws_hosted_zone != "" ? 1 : 0
-
-  name    = "${var.subdomain}.${data.aws_route53_zone.hosted_zone.name}"
-  zone_id = data.aws_route53_zone.hosted_zone.id
-  type    = "A"
-
-  alias {
-    name                   = var.name
-    zone_id                = var.aws_hosted_zone
-    evaluate_target_health = false
   }
 
   lifecycle {
