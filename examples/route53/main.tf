@@ -21,7 +21,7 @@ module "route53" {
   hosted_zone_id = var.hosted_zone_id
 }
 
-resource "humanitec_resource_definition_criteria" "redis" {
+resource "humanitec_resource_definition_criteria" "dns" {
   resource_definition_id = module.route53.id
   app_id                 = humanitec_application.example.id
 }
