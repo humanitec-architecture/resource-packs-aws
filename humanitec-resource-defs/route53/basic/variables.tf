@@ -34,8 +34,3 @@ variable "hosted_zone_id" {
   description = "The id of the hosted zone in which this record set will reside."
   type        = string
 }
-
-variable "subdomain" {
-  description = "The subdomain of the DNS name that the DNS record is for."
-  type        = string
-}

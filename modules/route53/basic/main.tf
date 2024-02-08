@@ -8,7 +8,7 @@ locals {
 }
 
 data "aws_route53_zone" "hosted_zone" {
-  id = var.hosted_zone_id
+  zone_id = var.hosted_zone_id
 }
 
 resource "aws_route53_record" "non-alias-record" {
@@ -45,7 +45,7 @@ resource "aws_route53_record" "alias-record" {
   lifecycle {
     precondition {
       condition     = length(local.records) > 0
-      error_message = "Only one of ip_address, ipv6_address, name or alias is supported."
+      error_message = "Only one of ip_address, ipv6_address, name is supported."
     }
   }
 }

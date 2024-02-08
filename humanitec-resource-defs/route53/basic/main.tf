@@ -25,7 +25,7 @@ resource "humanitec_resource_definition" "main" {
         app_id                       = "$${context.app.id}"
         env_id                       = "$${context.env.id}"
         hosted_zone_id               = var.hosted_zone_id
-        subdomain                    = var.subdomain
+        subdomain                    = "$${context.app.id}-$${context.env.id}"
       }
     })
   }
