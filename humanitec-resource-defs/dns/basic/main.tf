@@ -14,7 +14,7 @@ resource "humanitec_resource_definition" "main" {
 
     values_string = jsonencode({
       source = {
-        path = "modules/route53/basic"
+        path = "modules/dns/basic"
         rev  = var.resource_packs_aws_rev
         url  = var.resource_packs_aws_url
       }

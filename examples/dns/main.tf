@@ -8,7 +8,7 @@ resource "humanitec_application" "example" {
 }
 
 module "route53" {
-  source = "../../humanitec-resource-defs/route53/basic"
+  source = "../../humanitec-resource-defs/dns/basic"
 
   access_key             = var.access_key
   secret_key             = var.secret_key

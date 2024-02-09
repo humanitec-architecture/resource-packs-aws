@@ -6,22 +6,27 @@
 
 ---
 
-A collection of AWS resources ready to be used with [Humanitec](https://humanitec.com/).
+The AWS Resource Pack contains various reference implementation of connecting AWS with [Humanitec](https://humanitec.com/).
+
+You can find more details about Resource Packs and how to use them [inside the Humanitec documentation](https://developer.humanitec.com/platform-orchestrator/resources/resource-packs/).
 
 The following resources are included:
 
+* [dns/basic](./humanitec-resource-defs/dns/basic): A `dns` resource using Route 53.
 * [iam-policy/ecr-create-repository](./humanitec-resource-defs/iam-policy/ecr-create-repository): IAM policy for to create ECR repositories.
-* [iam-policy/s3-admin](./humanitec-resource-defs/iam-policy/s3-admin): IAM policy for admin access for a S3 bucket.
-* [iam-policy/sqs-admin](./humanitec-resource-defs/iam-policy/sqs-admin): IAM policy for admin access for an SQS queue.
+* [iam-policy/s3](./humanitec-resource-defs/iam-policy/s3): IAM policy for for an S3 bucket.
+* [iam-policy/sqs](./humanitec-resource-defs/iam-policy/sqs): IAM policy for an SQS queue.
 * [iam-role/service-account](./humanitec-resource-defs/iam-role/service-account): An assumable IAM role, by a k8s service account.
-* [k8s/service-account](./humanitec-resource-defs/k8s/service-account): A k8s service account linked to an IAM role.
-* [redis/basic](./humanitec-resource-defs/redis/basic): AWS ElastiCache resource.
-* [s3/basic](./humanitec-resource-defs/s3/basic): A basic S3 bucket.
-* [sqs/basic](./humanitec-resource-defs/sqs/basic): A basic SQS queue.
-* [workload/service-account](./humanitec-resource-defs/workload/service-account): A workload service account.
+* [k8s/service-account](./humanitec-resource-defs/k8s/service-account): A `k8s-service-account` linked to an IAM role.
+* [rds/aurora](./humanitec-resource-defs/redis/basic): A `postgres` or `mysql` resource using AWS RDS Aurora.
+* [rds/basic](./humanitec-resource-defs/redis/basic): A `postgres` or `mysql` resource using AWS RDS.
+* [redis/basic](./humanitec-resource-defs/redis/basic): A `redis` resource using AWS ElastiCache.
+* [s3/basic](./humanitec-resource-defs/s3/basic): A basic `s3` bucket.
+* [sqs/basic](./humanitec-resource-defs/sqs/basic): A basic `sqs` queue.
+* [workload/service-account](./humanitec-resource-defs/workload/service-account): Inject a k8s service account into a `workload`.
 
 The `humanitec-resource-defs` directory includes the respective resource definitions.
 
 The `modules` directory includes the Terraform modules used by the [Humanitec Terraform Driver](https://developer.humanitec.com/integration-and-extensions/drivers/generic-drivers/terraform/) to provision the actual resources.
 
-Checkout `examples/main.tf` for an example application using S3 & SQS.
+Checkout `examples/` for example application using the resource definitions listed above.

@@ -16,7 +16,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| route53 | ../../humanitec-resource-defs/route53/basic | n/a |
+| route53 | ../../humanitec-resource-defs/dns/basic | n/a |
 
 ## Resources
 
