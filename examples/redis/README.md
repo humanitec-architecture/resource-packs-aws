@@ -1,3 +1,16 @@
+# Example: redis resource based on AWS ElastiCache
+
+This example configures a [redis](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#redis) resource definition using AWS ElastiCache.
+
+The created resource definition can be used in your score file using:
+
+```yaml
+resources:
+  ...
+  redis:
+    type: redis
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 

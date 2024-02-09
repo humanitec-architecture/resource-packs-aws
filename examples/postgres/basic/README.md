@@ -1,3 +1,16 @@
+# Example: postgres resource based on AWS RDS
+
+This example configures a [postgres](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#postgres) resource definition using AWS RDS.
+
+The created resource definition can be used in your score file using:
+
+```yaml
+resources:
+  ...
+  db:
+    type: postgres
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
