@@ -1,11 +1,11 @@
-# AWS S3
+# Example: s3 resource based on AWS S3
 
-This example configures an S3 bucket resource definition, with two different access policies:
+This example configures a [s3](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#s3) Resource Definition using AWS S3, with two different access policies:
 
 * `basic-admin` (full access)
 * `basic-read-only` (read-only access)
 
-Those resources can be used in your score file like:
+Those Resource Definitions can be used in your Score file using:
 
 ```yaml
 resources:

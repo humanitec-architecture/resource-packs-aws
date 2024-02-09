@@ -1,3 +1,16 @@
+# Example: dns resource based on AWS Route 53
+
+This example configures a [dns](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#dns) Resource Definition using AWS Route 53.
+
+The created Resource Definition can be used in your Score file using:
+
+```yaml
+resources:
+  ...
+  dns:
+    type: dns
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -16,7 +29,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| route53 | ../../humanitec-resource-defs/route53/basic | n/a |
+| route53 | ../../humanitec-resource-defs/dns/basic | n/a |
 
 ## Resources
 

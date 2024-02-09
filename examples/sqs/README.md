@@ -1,16 +1,16 @@
-# AWS SQS
+# Example: sqs resource based on AWS SQS
 
-This example configures an SQS queue resource definition, with two different access policies:
+This example configures a [sqs](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#sqs) Resource Definition using AWS SQS, with two different access policies:
 
 * `basic-publisher` (allowed to send messages)
 * `basic-consumer` (allowed to receive messages)
 
-Those resources can be used in your score file like:
+Those Resource Definitions can be used in your Score file using:
 
 ```yaml
 resources:
   ...
-  sqs:
+  queue:
     type: sqs
     class: basic-publisher
 ```

@@ -1,3 +1,16 @@
+# Example: mysql resource based on AWS RDS
+
+This example configures a [mysql](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#mysql) Resource Definition using AWS RDS.
+
+The created Resource Definition can be used in your Score file using:
+
+```yaml
+resources:
+  ...
+  db:
+    type: mysql
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -11,18 +24,21 @@
 
 | Name | Version |
 |------|---------|
+| aws | ~> 5.0 |
 | humanitec | ~> 0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| rds | ../../../humanitec-resource-defs/rds/aurora | n/a |
+| rds | ../../../humanitec-resource-defs/rds/basic | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
+| [aws_security_group.mysql](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
+| [aws_vpc_security_group_ingress_rule.k8s_node_mysql](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_security_group_ingress_rule) | resource |
 | [humanitec_application.app](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/application) | resource |
 | [humanitec_resource_definition_criteria.rds](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 
