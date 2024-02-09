@@ -6,7 +6,7 @@
 
 ---
 
-The AWS Resource Pack contains various reference implementation of connecting AWS with [Humanitec](https://humanitec.com/).
+The AWS Resource Pack contains various reference implementation of connecting AWS with [the Humanitec Platform Orchestrator](https://developer.humanitec.com/platform-orchestrator/overview/).
 
 You can find more details about Resource Packs and how to use them [inside the Humanitec documentation](https://developer.humanitec.com/platform-orchestrator/resources/resource-packs/).
 
