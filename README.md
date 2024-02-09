@@ -18,8 +18,10 @@ The following resources are included:
 * [iam-policy/sqs](./humanitec-resource-defs/iam-policy/sqs): IAM policy for an SQS queue.
 * [iam-role/service-account](./humanitec-resource-defs/iam-role/service-account): An assumable IAM role, by a k8s service account.
 * [k8s/service-account](./humanitec-resource-defs/k8s/service-account): A `k8s-service-account` linked to an IAM role.
-* [rds/aurora](./humanitec-resource-defs/rds/aurora): A `postgres` or `mysql` resource using AWS RDS Aurora.
-* [rds/basic](./humanitec-resource-defs/rds/basic): A `postgres` or `mysql` resource using AWS RDS.
+* [mysql/aurora](./humanitec-resource-defs/rds/aurora): A `mysql` resource using AWS RDS Aurora.
+* [mysql/basic](./humanitec-resource-defs/rds/basic): A `mysql` resource using AWS RDS.
+* [postgres/aurora](./humanitec-resource-defs/rds/aurora): A `postgres` resource using AWS RDS Aurora.
+* [postgres/basic](./humanitec-resource-defs/rds/basic): A `postgres` resource using AWS RDS.
 * [redis/basic](./humanitec-resource-defs/redis/basic): A `redis` resource using AWS ElastiCache.
 * [s3/basic](./humanitec-resource-defs/s3/basic): A basic `s3` bucket.
 * [sqs/basic](./humanitec-resource-defs/sqs/basic): A basic `sqs` queue.

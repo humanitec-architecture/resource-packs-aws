@@ -3,8 +3,8 @@ resource "humanitec_application" "app" {
   name = var.name
 }
 
-module "rds" {
-  source = "../../../humanitec-resource-defs/rds/aurora"
+module "postgres" {
+  source = "../../../humanitec-resource-defs/postgres/aurora"
 
   prefix                 = "${var.name}-"
   resource_packs_aws_rev = var.resource_packs_aws_rev
@@ -30,7 +30,7 @@ module "rds" {
   }
 }
 
-resource "humanitec_resource_definition_criteria" "rds" {
-  resource_definition_id = module.rds.id
+resource "humanitec_resource_definition_criteria" "postgres" {
+  resource_definition_id = module.postgres.id
   app_id                 = humanitec_application.app.id
 }

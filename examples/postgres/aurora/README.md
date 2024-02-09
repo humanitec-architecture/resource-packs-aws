@@ -30,14 +30,14 @@ resources:
 
 | Name | Source | Version |
 |------|--------|---------|
-| rds | ../../../humanitec-resource-defs/rds/aurora | n/a |
+| postgres | ../../../humanitec-resource-defs/postgres/aurora | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
 | [humanitec_application.app](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/application) | resource |
-| [humanitec_resource_definition_criteria.rds](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
+| [humanitec_resource_definition_criteria.postgres](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 
 ## Inputs
 
