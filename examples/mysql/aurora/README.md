@@ -1,8 +1,8 @@
 # Example: mysql resource based on AWS RDS Aurora
 
-This example configures a [mysql](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#mysql) resource definition using AWS RDS Aurora.
+This example configures a [mysql](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#mysql) Resource Definition using AWS RDS Aurora.
 
-The created definition can be used in your score file using:
+The created definition can be used in your Score file using:
 
 ```yaml
 resources:

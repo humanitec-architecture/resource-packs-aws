@@ -1,8 +1,8 @@
 # Example: dns resource based on AWS Route 53
 
-This example configures a [dns](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#dns) resource definition using AWS Route 53.
+This example configures a [dns](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#dns) Resource Definition using AWS Route 53.
 
-The created resource definition can be used in your score file using:
+The created Resource Definition can be used in your Score file using:
 
 ```yaml
 resources:

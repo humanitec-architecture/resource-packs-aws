@@ -18,15 +18,15 @@ The following resources are included:
 * [iam-policy/sqs](./humanitec-resource-defs/iam-policy/sqs): IAM policy for an SQS queue.
 * [iam-role/service-account](./humanitec-resource-defs/iam-role/service-account): An assumable IAM role, by a k8s service account.
 * [k8s/service-account](./humanitec-resource-defs/k8s/service-account): A `k8s-service-account` linked to an IAM role.
-* [rds/aurora](./humanitec-resource-defs/redis/basic): A `postgres` or `mysql` resource using AWS RDS Aurora.
-* [rds/basic](./humanitec-resource-defs/redis/basic): A `postgres` or `mysql` resource using AWS RDS.
+* [rds/aurora](./humanitec-resource-defs/rds/aurora): A `postgres` or `mysql` resource using AWS RDS Aurora.
+* [rds/basic](./humanitec-resource-defs/rds/basic): A `postgres` or `mysql` resource using AWS RDS.
 * [redis/basic](./humanitec-resource-defs/redis/basic): A `redis` resource using AWS ElastiCache.
 * [s3/basic](./humanitec-resource-defs/s3/basic): A basic `s3` bucket.
 * [sqs/basic](./humanitec-resource-defs/sqs/basic): A basic `sqs` queue.
 * [workload/service-account](./humanitec-resource-defs/workload/service-account): Inject a k8s service account into a `workload`.
 
-The `humanitec-resource-defs` directory includes the respective resource definitions.
+The `humanitec-resource-defs` directory includes the respective Resource Definitions.
 
 The `modules` directory includes the Terraform modules used by the [Humanitec Terraform Driver](https://developer.humanitec.com/integration-and-extensions/drivers/generic-drivers/terraform/) to provision the actual resources.
 
-Checkout `examples/` for example application using the resource definitions listed above.
+Checkout `examples/` for example usage of the Resource Definitions listed above.

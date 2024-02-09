@@ -1,8 +1,8 @@
 # Example: mysql resource based on AWS RDS
 
-This example configures a [mysql](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#mysql) resource definition using AWS RDS.
+This example configures a [mysql](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#mysql) Resource Definition using AWS RDS.
 
-The created resource definition can be used in your score file using:
+The created Resource Definition can be used in your Score file using:
 
 ```yaml
 resources:
