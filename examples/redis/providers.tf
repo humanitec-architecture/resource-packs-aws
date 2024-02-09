@@ -16,10 +16,10 @@ terraform {
 provider "aws" {
   default_tags {
     tags = {
-      "managed-by" = "humanitec/resource-pack-aws/examples"
+      "managed_by" = "terraform"
+      "source"     = "github.com/humanitec-architecture/resource-pack-aws"
     }
   }
 }
-
 
 provider "humanitec" {}
