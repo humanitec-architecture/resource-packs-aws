@@ -17,10 +17,11 @@ provider "aws" {
 
   default_tags {
     tags = {
-      "managed-by" = "humanitec"
-      "hum-app-id" = var.app_id
-      "hum-env-id" = var.env_id
-      "hum-res-id" = var.res_id
+      "humanitec"  = "true"
+      "hum:app"    = var.app_id
+      "hum:env"    = var.env_id
+      "hum:res"    = var.res_id
+      "managed_by" = "terraform"
     }
   }
 }

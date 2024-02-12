@@ -14,9 +14,12 @@ terraform {
 }
 
 provider "aws" {
-  region     = var.region
-  access_key = var.access_key
-  secret_key = var.secret_key
+  default_tags {
+    tags = {
+      "managed_by" = "terraform"
+      "source"     = "github.com/humanitec-architecture/resource-pack-aws"
+    }
+  }
 }
 
 provider "humanitec" {
