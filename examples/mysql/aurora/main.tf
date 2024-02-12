@@ -3,8 +3,8 @@ resource "humanitec_application" "app" {
   name = var.name
 }
 
-module "rds" {
-  source = "../../../humanitec-resource-defs/rds/aurora"
+module "mysql" {
+  source = "../../../humanitec-resource-defs/mysql/aurora"
 
   prefix                 = "${var.name}-"
   resource_packs_aws_rev = var.resource_packs_aws_rev
@@ -13,12 +13,6 @@ module "rds" {
   access_key = var.access_key
   secret_key = var.secret_key
   region     = var.region
-
-  type = "mysql"
-
-  engine         = "aurora-mysql"
-  engine_version = "8.0"
-  group_family   = "aurora-mysql8.0"
 
   name            = "${var.name}-database"
   database_name   = "my_database"
@@ -36,7 +30,7 @@ module "rds" {
   }
 }
 
-resource "humanitec_resource_definition_criteria" "rds" {
-  resource_definition_id = module.rds.id
+resource "humanitec_resource_definition_criteria" "mysql" {
+  resource_definition_id = module.mysql.id
   app_id                 = humanitec_application.app.id
 }
