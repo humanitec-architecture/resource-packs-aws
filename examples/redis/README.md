@@ -53,7 +53,8 @@ resources:
 | secret\_key | AWS Secret Key | `string` | n/a | yes |
 | subnet\_ids | AWS Subnet IDs to use for the AWS ElastiCache cluster | `set(string)` | n/a | yes |
 | vpc\_id | AWS VPC ID | `string` | n/a | yes |
-| name | Name of the example application | `string` | `"redis-test"` | no |
+| name | Name of the example application | `string` | `"hum-rp-redis-example"` | no |
+| prefix | Prefix of the created resources | `string` | `"hum-rp-redis-ex-"` | no |
 | resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | `"refs/heads/main"` | no |
 | resource\_packs\_aws\_url | AWS Resource Pack git url | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
 <!-- END_TF_DOCS -->

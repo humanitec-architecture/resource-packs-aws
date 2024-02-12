@@ -6,7 +6,10 @@ access_key = ""
 hosted_zone_id = ""
 
 # Name of the example application
-name = ""
+name = "hum-rp-dns-example"
+
+# Prefix of the created resources
+prefix = "hum-rp-dns-ex-"
 
 # AWS Region
 region = ""

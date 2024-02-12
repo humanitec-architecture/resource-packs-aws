@@ -1,8 +1,3 @@
-variable "name" {
-  type        = string
-  description = "Name that will be used in resouces' names"
-}
-
 variable "access_key" {
   type        = string
   description = "AWS Access Key"
@@ -59,4 +54,16 @@ variable "subnet_ids" {
 variable "k8s_node_security_group_id" {
   description = "AWS Security Group ID of the kubernetes nodes to allow access to the AWS RDS cluster"
   type        = string
+}
+
+variable "name" {
+  description = "Name of the example application"
+  type        = string
+  default     = "hum-rp-postgres-example"
+}
+
+variable "prefix" {
+  description = "Prefix of the created resources"
+  type        = string
+  default     = "hum-rp-postgres-ex-"
 }

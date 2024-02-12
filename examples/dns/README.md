@@ -44,9 +44,10 @@ resources:
 |------|-------------|------|---------|:--------:|
 | access\_key | AWS Access Key | `string` | n/a | yes |
 | hosted\_zone\_id | The id of the hosted zone in which this record set will reside. | `string` | n/a | yes |
-| name | Name of the example application | `string` | n/a | yes |
 | region | AWS Region | `string` | n/a | yes |
 | secret\_key | AWS Secret Key | `string` | n/a | yes |
+| name | Name of the example application | `string` | `"hum-rp-dns-example"` | no |
+| prefix | Prefix of the created resources | `string` | `"hum-rp-dns-ex-"` | no |
 | resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | `"refs/heads/main"` | no |
 | resource\_packs\_aws\_url | AWS Resource Pack git url | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
 <!-- END_TF_DOCS -->

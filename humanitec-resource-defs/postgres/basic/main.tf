@@ -19,10 +19,12 @@ resource "humanitec_resource_definition" "main" {
         url  = var.resource_packs_aws_url
       }
       variables = {
-        region                                = var.region
-        res_id                                = "$${context.res.id}"
-        app_id                                = "$${context.app.id}"
-        env_id                                = "$${context.env.id}"
+        region = var.region
+        res_id = "$${context.res.id}"
+        app_id = "$${context.app.id}"
+        env_id = "$${context.env.id}"
+
+        prefix                                = var.prefix
         name                                  = var.name
         database_name                         = var.database_name
         username                              = var.username

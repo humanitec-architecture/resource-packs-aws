@@ -1,7 +1,3 @@
-variable "prefix" {
-  type = string
-}
-
 variable "resource_packs_aws_url" {
   description = "AWS Resource Pack git url"
   type        = string
@@ -23,4 +19,15 @@ variable "secret_key" {
 
 variable "region" {
   type = string
+}
+
+variable "prefix" {
+  type        = string
+  description = "Name prefix"
+}
+
+variable "name" {
+  type        = string
+  description = "Resource name (can contain placeholders like $${context.app.id})"
+  default     = ""
 }

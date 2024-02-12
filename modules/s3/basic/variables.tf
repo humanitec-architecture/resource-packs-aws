@@ -1,5 +1,6 @@
 variable "prefix" {
-  type = string
+  type        = string
+  description = "Prefix for all resources"
 }
 
 variable "region" {
@@ -17,6 +18,12 @@ variable "secret_key" {
 variable "force_destroy" {
   type    = bool
   default = true
+}
+
+variable "name" {
+  type        = string
+  description = "Resource name"
+  default     = ""
 }
 
 variable "app_id" {

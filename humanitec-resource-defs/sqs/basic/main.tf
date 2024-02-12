@@ -20,11 +20,9 @@ resource "humanitec_resource_definition" "main" {
       }
 
       variables = {
-        region = var.region,
-        # TODO: How to template the queue name?
-        # Name restrictions https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-queues.html
-        # prefix = "${var.prefix}$${context.res.id}"
-        prefix = "${var.prefix}basic-queue"
+        region = var.region
+        prefix = var.prefix
+        name   = var.name
 
         res_id = "$${context.res.id}"
         app_id = "$${context.app.id}"

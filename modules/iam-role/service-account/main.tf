@@ -1,5 +1,9 @@
 locals {
-  k8s_service_account_name = "${var.app_id}-${var.env_id}-${trimprefix(var.res_id, "modules.")}"
+  # Name restrictions https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length
+  default_name = trimsuffix(substr("${var.prefix}${var.app_id}-${var.env_id}-${replace(var.res_id, ".", "-")}", 0, 64), "-")
+
+  # Name restrictions https://kubernetes.io/docs/concepts/overview/working-with-objects/names/
+  k8s_service_account_name = coalesce(var.name, local.default_name)
 }
 
 data "aws_iam_policy_document" "assume_role_policy" {
@@ -18,7 +22,7 @@ data "aws_iam_policy_document" "assume_role_policy" {
 resource "aws_iam_role" "main" {
   count = length(var.policy_arns) > 0 ? 1 : 0
 
-  name_prefix        = var.prefix
+  name               = coalesce(var.name, local.default_name)
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
 }
 

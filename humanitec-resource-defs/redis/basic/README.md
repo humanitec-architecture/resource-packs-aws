@@ -29,6 +29,7 @@
 | secret\_key | AWS Secret Key | `string` | n/a | yes |
 | security\_group\_ids | List of AWS security group IDs to use for the AWS ElastiCache cluster | `set(string)` | n/a | yes |
 | subnet\_group\_name | Name of the AWS ElastiCache subnet group to use | `string` | n/a | yes |
+| name | Resource name (can contain placeholders like ${context.app.id}) | `string` | `""` | no |
 | node\_type | AWS ElastiCache node type | `string` | `"cache.t4g.micro"` | no |
 | num\_cache\_clusters | Number of AWS ElastiCache clusters | `number` | `1` | no |
 | parameter\_group\_name | AWS ElastiCache parameter group name | `string` | `"default.redis7.cluster.on"` | no |

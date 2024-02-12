@@ -6,7 +6,10 @@ access_key = ""
 cluster_name = ""
 
 # Name of the example application
-name = "s3-test"
+name = "hum-rp-s3-example"
+
+# Prefix of the created resources
+prefix = "hum-rp-s3-ex-"
 
 # AWS Region
 region = ""

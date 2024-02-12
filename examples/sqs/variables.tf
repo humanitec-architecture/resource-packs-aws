@@ -33,5 +33,11 @@ variable "resource_packs_aws_rev" {
 variable "name" {
   description = "Name of the example application"
   type        = string
-  default     = "sqs-test"
+  default     = "hum-rp-s3-example"
+}
+
+variable "prefix" {
+  description = "Prefix of the created resources"
+  type        = string
+  default     = "hum-rp-s3-ex-"
 }

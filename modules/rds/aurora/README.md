@@ -20,11 +20,10 @@
 | access\_key | n/a | `string` | n/a | yes |
 | app\_id | n/a | `string` | n/a | yes |
 | database\_name | n/a | `string` | n/a | yes |
-| db\_subnet\_group\_name | n/a | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
 | master\_password | n/a | `string` | n/a | yes |
 | master\_username | n/a | `string` | n/a | yes |
-| name | n/a | `string` | n/a | yes |
+| prefix | Prefix for all resources | `string` | n/a | yes |
 | region | n/a | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
 | secret\_key | n/a | `string` | n/a | yes |
@@ -38,12 +37,14 @@
 | db\_cluster\_activity\_stream\_mode | n/a | `string` | `"async"` | no |
 | db\_cluster\_parameter\_group\_parameters | n/a | `set(any)` | `[]` | no |
 | db\_parameter\_group\_parameters | n/a | `set(any)` | `[]` | no |
+| db\_subnet\_group\_name | DB subnet group name | `string` | `""` | no |
 | enabled\_cloudwatch\_logs\_exports | n/a | `set(string)` | `[]` | no |
 | endpoints | n/a | `any` | `{}` | no |
 | engine | n/a | `string` | `"aurora-postgresql"` | no |
 | engine\_version | n/a | `string` | `"14.7"` | no |
 | group\_family | n/a | `string` | `"aurora-postgresql14"` | no |
 | instances | n/a | `map(any)` | <pre>{<br>  "1": {<br>    "db_parameter_group_name": "default.aurora-postgresql14",<br>    "instance_class": "db.r5.2xlarge",<br>    "publicly_accessible": true<br>  },<br>  "2": {<br>    "identifier": "static-member-1",<br>    "instance_class": "db.r5.2xlarge"<br>  }<br>}</pre> | no |
+| name | Resource name | `string` | `""` | no |
 | security\_group\_rules | n/a | `any` | `{}` | no |
 | skip\_final\_snapshot | n/a | `bool` | `true` | no |
 | storage\_encrypted | n/a | `bool` | `true` | no |

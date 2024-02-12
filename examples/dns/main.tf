@@ -1,7 +1,3 @@
-locals {
-  res_def_prefix = "${var.name}-"
-}
-
 resource "humanitec_application" "example" {
   id   = var.name
   name = var.name
@@ -16,7 +12,7 @@ module "route53" {
   resource_packs_aws_rev = var.resource_packs_aws_rev
   region                 = var.region
 
-  prefix = local.res_def_prefix
+  prefix = var.prefix
 
   hosted_zone_id = var.hosted_zone_id
 }

@@ -66,7 +66,8 @@ The workload service account will automatically be assigned the necessary AWS IA
 | cluster\_name | Name of the EKS cluster | `string` | n/a | yes |
 | region | AWS Region | `string` | n/a | yes |
 | secret\_key | AWS Secret Key | `string` | n/a | yes |
-| name | Name of the example application | `string` | `"s3-test"` | no |
+| name | Name of the example application | `string` | `"hum-rp-s3-example"` | no |
+| prefix | Prefix of the created resources | `string` | `"hum-rp-s3-ex-"` | no |
 | resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | `"refs/heads/main"` | no |
 | resource\_packs\_aws\_url | AWS Resource Pack git url | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
 <!-- END_TF_DOCS -->

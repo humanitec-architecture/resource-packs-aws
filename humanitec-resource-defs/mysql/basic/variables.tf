@@ -1,5 +1,6 @@
 variable "prefix" {
-  type = string
+  description = "Prefix for all resources"
+  type        = string
 }
 
 variable "resource_packs_aws_url" {
@@ -26,7 +27,9 @@ variable "secret_key" {
 }
 
 variable "name" {
-  type = string
+  type        = string
+  description = "Resource name (can contain placeholders like $${context.app.id})"
+  default     = ""
 }
 
 variable "database_name" {
@@ -49,7 +52,9 @@ variable "create_db_subnet_group" {
 }
 
 variable "db_subnet_group_name" {
-  type = string
+  type        = string
+  description = "DB subnet group name (can contain placeholders like $${context.app.id})"
+  default     = ""
 }
 
 variable "subnet_ids" {

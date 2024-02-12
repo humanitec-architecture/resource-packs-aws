@@ -1,8 +1,13 @@
+locals {
+  # Name restrictions https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html#RDS_Limits.Constraints
+  default_name = trimsuffix(substr("${var.prefix}${var.app_id}-${var.env_id}-${replace(var.res_id, ".", "-")}", 0, 63), "-")
+}
+
 module "aurora" {
   source  = "terraform-aws-modules/rds-aurora/aws"
   version = "9.0.0"
 
-  name          = var.name
+  name          = coalesce(var.name, local.default_name)
   database_name = var.database_name
 
   engine         = var.engine
@@ -23,7 +28,7 @@ module "aurora" {
   subnets = var.subnets
 
   create_db_subnet_group = var.create_db_subnet_group
-  db_subnet_group_name   = var.db_subnet_group_name
+  db_subnet_group_name   = coalesce(var.db_subnet_group_name, local.default_name)
   security_group_rules   = var.security_group_rules
 
   apply_immediately   = var.apply_immediately

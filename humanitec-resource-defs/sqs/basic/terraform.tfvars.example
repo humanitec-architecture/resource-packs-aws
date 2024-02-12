@@ -1,6 +1,12 @@
 access_key = ""
-prefix     = ""
-region     = ""
+
+# Resource name (can contain placeholders like ${context.app.id})
+name = ""
+
+# Prefix for all resources
+prefix = ""
+
+region = ""
 
 # AWS Resource Pack git branch
 resource_packs_aws_rev = ""
