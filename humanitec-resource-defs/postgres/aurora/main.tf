@@ -25,6 +25,7 @@ resource "humanitec_resource_definition" "main" {
         app_id = "$${context.app.id}"
         env_id = "$${context.env.id}"
 
+        prefix                                = var.prefix
         name                                  = var.name
         database_name                         = var.database_name
         master_username                       = var.master_username

@@ -5,6 +5,9 @@ access_key = ""
 app_id = ""
 env_id = ""
 
+# Resource name
+name = ""
+
 # AWS ElastiCache node type
 node_type = "cache.t4g.micro"
 

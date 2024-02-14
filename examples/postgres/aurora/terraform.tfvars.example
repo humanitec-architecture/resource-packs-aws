@@ -14,8 +14,11 @@ humanitec_token = ""
 # AWS Security Group ID of the kubernetes nodes to allow access to the AWS RDS cluster
 k8s_node_security_group_id = ""
 
-# Name that will be used in resouces' names
-name = ""
+# Name of the example application
+name = "hum-rp-postgres-example"
+
+# Prefix of the created resources
+prefix = "hum-rp-postgres-ex-"
 
 # AWS Region to create resources
 region = ""

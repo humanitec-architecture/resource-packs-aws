@@ -8,12 +8,15 @@ db_cluster_activity_stream_kms_key_id = ""
 db_cluster_activity_stream_mode       = "async"
 db_cluster_parameter_group_parameters = []
 db_parameter_group_parameters         = []
-db_subnet_group_name                  = ""
-enabled_cloudwatch_logs_exports       = []
-endpoints                             = {}
-engine                                = "aurora-postgresql"
-engine_version                        = "14.7"
-group_family                          = "aurora-postgresql14"
+
+# DB subnet group name (can contain placeholders like ${context.app.id})
+db_subnet_group_name = ""
+
+enabled_cloudwatch_logs_exports = []
+endpoints                       = {}
+engine                          = "aurora-postgresql"
+engine_version                  = "14.7"
+group_family                    = "aurora-postgresql14"
 instances = {
   "1": {
     "db_parameter_group_name": "default.aurora-postgresql14",
@@ -27,9 +30,14 @@ instances = {
 }
 master_password = ""
 master_username = ""
-name            = ""
-prefix          = ""
-region          = ""
+
+# Resource name (can contain placeholders like ${context.app.id})
+name = ""
+
+# Prefix for all resources
+prefix = ""
+
+region = ""
 
 # AWS Resource Pack git branch
 resource_packs_aws_rev = ""

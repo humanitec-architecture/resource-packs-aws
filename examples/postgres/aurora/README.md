@@ -47,12 +47,13 @@ resources:
 | humanitec\_org\_id | Humanitec organization where resource definitions will be applied | `string` | n/a | yes |
 | humanitec\_token | Humanitec API token | `string` | n/a | yes |
 | k8s\_node\_security\_group\_id | AWS Security Group ID of the kubernetes nodes to allow access to the AWS RDS cluster | `string` | n/a | yes |
-| name | Name that will be used in resouces' names | `string` | n/a | yes |
 | region | AWS Region to create resources | `string` | n/a | yes |
 | secret\_key | AWS Secret Key | `string` | n/a | yes |
 | subnet\_ids | AWS Subnet IDs to use for the AWS RDS cluster | `set(string)` | n/a | yes |
 | vpc\_id | AWS VPC ID | `string` | n/a | yes |
 | humanitec\_host | Humanitec API host url | `string` | `"https://api.humanitec.io"` | no |
+| name | Name of the example application | `string` | `"hum-rp-postgres-example"` | no |
+| prefix | Prefix of the created resources | `string` | `"hum-rp-postgres-ex-"` | no |
 | resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | `"refs/heads/main"` | no |
 | resource\_packs\_aws\_url | AWS Resource Pack git url | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
 <!-- END_TF_DOCS -->

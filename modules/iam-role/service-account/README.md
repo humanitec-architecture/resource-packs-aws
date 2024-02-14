@@ -31,10 +31,11 @@
 | env\_id | n/a | `string` | n/a | yes |
 | namespace | n/a | `string` | n/a | yes |
 | policy\_arns | n/a | `set(string)` | n/a | yes |
-| prefix | n/a | `string` | n/a | yes |
+| prefix | Prefix for all resources | `string` | n/a | yes |
 | region | n/a | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
 | secret\_key | n/a | `string` | n/a | yes |
+| name | Resource name | `string` | `""` | no |
 
 ## Outputs
 

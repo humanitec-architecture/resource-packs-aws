@@ -1,8 +1,13 @@
+locals {
+  # Name restrictions https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html#RDS_Limits.Constraints
+  default_name = trimsuffix(substr("${var.prefix}${var.app_id}-${var.env_id}-${replace(var.res_id, ".", "-")}", 0, 63), "-")
+}
+
 module "db" {
   source  = "terraform-aws-modules/rds/aws"
   version = "6.3.0"
 
-  identifier = var.name
+  identifier = coalesce(var.name, local.default_name)
   db_name    = var.database_name
   port       = var.port
 
@@ -22,7 +27,7 @@ module "db" {
   multi_az = var.multi_az
 
   create_db_subnet_group = var.create_db_subnet_group
-  db_subnet_group_name   = var.db_subnet_group_name
+  db_subnet_group_name   = coalesce(var.db_subnet_group_name, local.default_name)
   subnet_ids             = var.subnet_ids
 
   vpc_security_group_ids = var.vpc_security_group_ids

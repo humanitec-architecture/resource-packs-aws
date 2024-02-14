@@ -1,3 +1,8 @@
+variable "prefix" {
+  type        = string
+  description = "Prefix for all resources"
+}
+
 variable "region" {
   type = string
 }
@@ -23,7 +28,9 @@ variable "res_id" {
 }
 
 variable "name" {
-  type = string
+  type        = string
+  description = "Resource name"
+  default     = ""
 }
 
 variable "database_name" {
@@ -47,7 +54,9 @@ variable "subnets" {
 }
 
 variable "db_subnet_group_name" {
-  type = string
+  type        = string
+  description = "DB subnet group name"
+  default     = ""
 }
 
 variable "create_db_subnet_group" {

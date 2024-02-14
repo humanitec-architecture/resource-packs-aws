@@ -56,3 +56,9 @@ variable "security_group_ids" {
   description = "List of AWS security group IDs to use for the AWS ElastiCache cluster"
   type        = set(string)
 }
+
+variable "name" {
+  type        = string
+  description = "Resource name (can contain placeholders like $${context.app.id})"
+  default     = ""
+}

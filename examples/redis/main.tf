@@ -1,7 +1,3 @@
-locals {
-  res_def_prefix = "${var.name}-"
-}
-
 # Prepare application, subnet group and security group
 
 resource "humanitec_application" "example" {
@@ -40,7 +36,7 @@ module "redis" {
   resource_packs_aws_rev = var.resource_packs_aws_rev
   region                 = var.region
 
-  prefix             = local.res_def_prefix
+  prefix             = var.prefix
   subnet_group_name  = aws_elasticache_subnet_group.redis.name
   security_group_ids = [aws_security_group.redis.id]
 }

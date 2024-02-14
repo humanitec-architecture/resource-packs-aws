@@ -2,9 +2,16 @@ access_key   = ""
 app_id       = ""
 cluster_name = ""
 env_id       = ""
-namespace    = ""
-policy_arns  = ""
-prefix       = ""
-region       = ""
-res_id       = ""
-secret_key   = ""
+
+# Resource name
+name = ""
+
+namespace   = ""
+policy_arns = ""
+
+# Prefix for all resources
+prefix = ""
+
+region     = ""
+res_id     = ""
+secret_key = ""

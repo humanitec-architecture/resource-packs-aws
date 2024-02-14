@@ -1,5 +1,6 @@
 variable "prefix" {
-  type = string
+  description = "Prefix for all resources"
+  type        = string
 }
 
 variable "resource_packs_aws_url" {
@@ -33,4 +34,10 @@ variable "policy_classes" {
   description = "Humanitec aws-policy classes to provision by default for this role."
   type        = list(string)
   default     = []
+}
+
+variable "name" {
+  type        = string
+  description = "Resource name (can contain placeholders like $${context.app.id})"
+  default     = ""
 }

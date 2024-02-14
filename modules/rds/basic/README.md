@@ -19,10 +19,9 @@
 | access\_key | n/a | `string` | n/a | yes |
 | app\_id | n/a | `string` | n/a | yes |
 | database\_name | n/a | `string` | n/a | yes |
-| db\_subnet\_group\_name | n/a | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
-| name | n/a | `string` | n/a | yes |
 | password | n/a | `string` | n/a | yes |
+| prefix | Prefix for all resources | `string` | n/a | yes |
 | region | n/a | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
 | secret\_key | n/a | `string` | n/a | yes |
@@ -35,6 +34,7 @@
 | create\_cloudwatch\_log\_group | n/a | `bool` | `false` | no |
 | create\_db\_subnet\_group | n/a | `bool` | `true` | no |
 | create\_monitoring\_role | n/a | `bool` | `true` | no |
+| db\_subnet\_group\_name | DB subnet group name | `string` | `""` | no |
 | deletion\_protection | n/a | `bool` | `false` | no |
 | enabled\_cloudwatch\_logs\_exports | n/a | `set(string)` | `[]` | no |
 | engine | n/a | `string` | `"postgres"` | no |
@@ -49,6 +49,7 @@
 | monitoring\_role\_name | n/a | `string` | `"rds-monitoring-role"` | no |
 | monitoring\_role\_use\_name\_prefix | n/a | `bool` | `true` | no |
 | multi\_az | n/a | `bool` | `true` | no |
+| name | Resource name | `string` | `""` | no |
 | parameters | n/a | `set(any)` | `[]` | no |
 | performance\_insights\_enabled | n/a | `bool` | `true` | no |
 | performance\_insights\_retention\_period | n/a | `number` | `7` | no |

@@ -1,7 +1,3 @@
-locals {
-  res_def_prefix = "${var.name}-"
-}
-
 resource "humanitec_application" "example" {
   id   = var.name
   name = var.name
@@ -32,7 +28,7 @@ module "s3_basic" {
   secret_key = var.secret_key
   region     = var.region
 
-  prefix = local.res_def_prefix
+  prefix = var.prefix
 }
 
 resource "humanitec_resource_definition_criteria" "s3_basic" {
@@ -58,7 +54,7 @@ module "iam_policy_s3_admin" {
 
   policy = "admin"
 
-  prefix = local.res_def_prefix
+  prefix = var.prefix
 
   s3_resource_class = local.s3_basic_class
 }
@@ -73,7 +69,7 @@ resource "humanitec_resource_definition_criteria" "iam_policy_s3_admin" {
 module "s3_basic_admin" {
   source = "../../humanitec-resource-defs/s3/passthrough"
 
-  prefix = local.res_def_prefix
+  prefix = var.prefix
 
   s3_resource_class     = local.s3_basic_class
   policy_resource_class = local.s3_admin_policy_class
@@ -101,7 +97,7 @@ module "iam_policy_s3_read_only" {
 
   policy = "read-only"
 
-  prefix = local.res_def_prefix
+  prefix = var.prefix
 
   s3_resource_class = local.s3_basic_class
 }
@@ -116,7 +112,7 @@ resource "humanitec_resource_definition_criteria" "iam_policy_s3_read_only" {
 module "s3_basic_read_only" {
   source = "../../humanitec-resource-defs/s3/passthrough"
 
-  prefix = local.res_def_prefix
+  prefix = var.prefix
 
   s3_resource_class     = local.s3_basic_class
   policy_resource_class = local.s3_read_only_policy_class
@@ -134,7 +130,7 @@ resource "humanitec_resource_definition_criteria" "s3_basic_read_only" {
 module "k8s_service_account" {
   source = "../../humanitec-resource-defs/k8s/service-account"
 
-  prefix = local.res_def_prefix
+  prefix = var.prefix
 }
 
 resource "humanitec_resource_definition_criteria" "k8s_service_account" {
@@ -153,7 +149,7 @@ module "iam_role_service_account" {
   region     = var.region
 
   cluster_name = var.cluster_name
-  prefix       = local.res_def_prefix
+  prefix       = var.prefix
 }
 
 resource "humanitec_resource_definition_criteria" "iam_role_service_account" {
@@ -164,7 +160,7 @@ resource "humanitec_resource_definition_criteria" "iam_role_service_account" {
 module "workload" {
   source = "../../humanitec-resource-defs/workload/service-account"
 
-  prefix = local.res_def_prefix
+  prefix = var.prefix
 }
 
 resource "humanitec_resource_definition_criteria" "workload" {

@@ -31,8 +31,10 @@ resource "humanitec_resource_definition" "main" {
       }
 
       variables = {
-        region       = var.region,
-        prefix       = "${var.prefix}$${context.res.id}"
+        region = var.region
+        prefix = var.prefix
+        name   = var.name
+
         policy_arns  = "$${resources.workload>aws-policy.outputs.arn}"
         cluster_name = var.cluster_name
         namespace    = "$${resources.k8s-namespace#k8s-namespace.outputs.namespace}"

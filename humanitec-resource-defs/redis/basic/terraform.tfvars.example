@@ -2,6 +2,9 @@
 # AWS Access Key
 access_key = ""
 
+# Resource name (can contain placeholders like ${context.app.id})
+name = ""
+
 # AWS ElastiCache node type
 node_type = "cache.t4g.micro"
 

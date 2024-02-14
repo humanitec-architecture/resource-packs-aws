@@ -6,7 +6,6 @@ resource "humanitec_application" "app" {
 module "mysql" {
   source = "../../../humanitec-resource-defs/mysql/basic"
 
-  prefix                 = "${var.name}-"
   resource_packs_aws_rev = var.resource_packs_aws_rev
   resource_packs_aws_url = var.resource_packs_aws_url
 
@@ -14,13 +13,13 @@ module "mysql" {
   secret_key = var.secret_key
   region     = var.region
 
-  name          = "${var.name}-database"
+  prefix        = var.prefix
+  name          = var.name
   database_name = "my_database"
   username      = "username"
   password      = "password"
 
   create_db_subnet_group = true
-  db_subnet_group_name   = "${var.name}-subnet-group"
   subnet_ids             = var.subnet_ids
 
   vpc_security_group_ids = [aws_security_group.mysql.id]

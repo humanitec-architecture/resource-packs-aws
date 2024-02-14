@@ -1,5 +1,6 @@
 variable "prefix" {
-  type = string
+  type        = string
+  description = "Prefix for all resources"
 }
 
 variable "region" {
@@ -24,4 +25,10 @@ variable "env_id" {
 
 variable "res_id" {
   type = string
+}
+
+variable "name" {
+  type        = string
+  description = "Resource name"
+  default     = ""
 }

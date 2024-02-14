@@ -25,12 +25,19 @@ variable "resource_packs_aws_rev" {
   default     = "refs/heads/main"
 }
 
-variable "name" {
-  description = "Name of the example application"
-  type        = string
-}
-
 variable "hosted_zone_id" {
   description = "The id of the hosted zone in which this record set will reside."
   type        = string
+}
+
+variable "name" {
+  description = "Name of the example application"
+  type        = string
+  default     = "hum-rp-dns-example"
+}
+
+variable "prefix" {
+  description = "Prefix of the created resources"
+  type        = string
+  default     = "hum-rp-dns-ex-"
 }

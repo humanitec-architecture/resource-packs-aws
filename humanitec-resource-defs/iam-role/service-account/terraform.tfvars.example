@@ -1,10 +1,15 @@
 access_key   = ""
 cluster_name = ""
 
+# Resource name (can contain placeholders like ${context.app.id})
+name = ""
+
 # Humanitec aws-policy classes to provision by default for this role.
 policy_classes = []
 
+# Prefix for all resources
 prefix = ""
+
 region = ""
 
 # AWS Resource Pack git branch
