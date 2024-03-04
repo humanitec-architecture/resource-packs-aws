@@ -40,8 +40,8 @@ The workload service account will automatically be assigned the necessary AWS IA
 | iam\_role\_service\_account | ../../humanitec-resource-defs/iam-role/service-account | n/a |
 | k8s\_service\_account | ../../humanitec-resource-defs/k8s/service-account | n/a |
 | s3\_basic | ../../humanitec-resource-defs/s3/basic | n/a |
-| s3\_basic\_admin | ../../humanitec-resource-defs/s3/passthrough | n/a |
-| s3\_basic\_read\_only | ../../humanitec-resource-defs/s3/passthrough | n/a |
+| s3\_basic\_admin | ../../humanitec-resource-defs/s3/delegator | n/a |
+| s3\_basic\_read\_only | ../../humanitec-resource-defs/s3/delegator | n/a |
 | workload | ../../humanitec-resource-defs/workload/service-account | n/a |
 
 ## Resources

@@ -65,9 +65,9 @@ resource "humanitec_resource_definition_criteria" "iam_policy_s3_admin" {
   class                  = local.s3_admin_policy_class
 }
 
-## Exposed passthrough resource definition
+## Exposed delegator resource definition
 module "s3_basic_admin" {
-  source = "../../humanitec-resource-defs/s3/passthrough"
+  source = "../../humanitec-resource-defs/s3/delegator"
 
   prefix = var.prefix
 
@@ -108,9 +108,9 @@ resource "humanitec_resource_definition_criteria" "iam_policy_s3_read_only" {
   class                  = local.s3_read_only_policy_class
 }
 
-## Exposed passthrough resource definition
+## Exposed delegator resource definition
 module "s3_basic_read_only" {
-  source = "../../humanitec-resource-defs/s3/passthrough"
+  source = "../../humanitec-resource-defs/s3/delegator"
 
   prefix = var.prefix
 
