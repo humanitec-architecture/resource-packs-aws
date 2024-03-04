@@ -12,7 +12,6 @@ variable "resource_packs_aws_url" {
 variable "resource_packs_aws_rev" {
   description = "AWS Resource Pack git branch"
   type        = string
-  default     = "refs/heads/main"
 }
 
 variable "access_key" {
@@ -56,4 +55,10 @@ variable "subnet_group_name" {
 variable "security_group_ids" {
   description = "List of AWS security group IDs to use for the AWS ElastiCache cluster"
   type        = set(string)
+}
+
+variable "name" {
+  type        = string
+  description = "Resource name (can contain placeholders like $${context.app.id})"
+  default     = ""
 }

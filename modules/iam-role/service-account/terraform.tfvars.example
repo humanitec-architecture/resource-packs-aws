@@ -1,11 +1,17 @@
-access_key        = ""
-app_id            = ""
-env_id            = ""
-namespace         = ""
-oidc_provider     = ""
-oidc_provider_arn = ""
-policy_arns       = ""
-prefix            = ""
-region            = ""
-res_id            = ""
-secret_key        = ""
+access_key   = ""
+app_id       = ""
+cluster_name = ""
+env_id       = ""
+
+# Resource name
+name = ""
+
+namespace   = ""
+policy_arns = ""
+
+# Prefix for all resources
+prefix = ""
+
+region     = ""
+res_id     = ""
+secret_key = ""

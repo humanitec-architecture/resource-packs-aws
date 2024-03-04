@@ -1,0 +1,53 @@
+access_key                  = ""
+allocated_storage           = 20
+backup_retention_period     = 1
+backup_window               = ""
+create_cloudwatch_log_group = false
+create_db_subnet_group      = true
+create_monitoring_role      = true
+database_name               = ""
+
+# DB subnet group name (can contain placeholders like ${context.app.id})
+db_subnet_group_name = ""
+
+deletion_protection             = false
+enabled_cloudwatch_logs_exports = []
+engine                          = "mysql"
+engine_version                  = "8.0"
+group_family                    = "mysql8.0"
+instance_class                  = "db.t4g.large"
+maintenance_window              = ""
+major_engine_version            = "8.0"
+max_allocated_storage           = 100
+monitoring_interval             = 60
+monitoring_role_description     = "Monitoring role for RDS basic cluster"
+monitoring_role_name            = "rds-basic-monitoring-role"
+monitoring_role_use_name_prefix = true
+multi_az                        = true
+
+# Resource name (can contain placeholders like ${context.app.id})
+name = ""
+
+parameters                            = []
+password                              = ""
+performance_insights_enabled          = true
+performance_insights_retention_period = 7
+port                                  = 3306
+
+# Prefix for all resources
+prefix = ""
+
+region = ""
+
+# AWS Resource Pack git branch
+resource_packs_aws_rev = ""
+
+# AWS Resource Pack git url
+resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+
+secret_key             = ""
+skip_final_snapshot    = true
+subnet_ids             = ""
+type                   = "mysql"
+username               = ""
+vpc_security_group_ids = ""

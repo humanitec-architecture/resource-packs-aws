@@ -1,5 +1,6 @@
 variable "prefix" {
-  type = string
+  type        = string
+  description = "Prefix for all resources"
 }
 
 variable "region" {
@@ -18,11 +19,7 @@ variable "policy_arns" {
   type = set(string)
 }
 
-variable "oidc_provider" {
-  type = string
-}
-
-variable "oidc_provider_arn" {
+variable "cluster_name" {
   type = string
 }
 
@@ -40,4 +37,10 @@ variable "env_id" {
 
 variable "res_id" {
   type = string
+}
+
+variable "name" {
+  type        = string
+  description = "Resource name"
+  default     = ""
 }

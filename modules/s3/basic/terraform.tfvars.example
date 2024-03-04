@@ -2,7 +2,13 @@ access_key    = ""
 app_id        = ""
 env_id        = ""
 force_destroy = true
-prefix        = ""
-region        = ""
-res_id        = ""
-secret_key    = ""
+
+# Resource name
+name = ""
+
+# Prefix for all resources
+prefix = ""
+
+region     = ""
+res_id     = ""
+secret_key = ""

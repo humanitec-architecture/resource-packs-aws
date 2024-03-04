@@ -1,9 +1,12 @@
-variable "prefix" {
-  type = string
+variable "resource_packs_aws_url" {
+  description = "AWS Resource Pack git url"
+  type        = string
+  default     = "https://github.com/humanitec-architecture/resource-packs-aws.git"
 }
 
 variable "resource_packs_aws_rev" {
-  type = string
+  description = "AWS Resource Pack git branch"
+  type        = string
 }
 
 variable "access_key" {
@@ -18,6 +21,13 @@ variable "region" {
   type = string
 }
 
-variable "policy_classes" {
-  type = list(string)
+variable "prefix" {
+  type        = string
+  description = "Name prefix"
+}
+
+variable "name" {
+  type        = string
+  description = "Resource name (can contain placeholders like $${context.app.id})"
+  default     = ""
 }

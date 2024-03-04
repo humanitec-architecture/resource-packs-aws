@@ -1,0 +1,55 @@
+access_key                            = ""
+apply_immediately                     = true
+create_cloudwatch_log_group           = false
+create_db_cluster_activity_stream     = false
+create_db_subnet_group                = true
+database_name                         = ""
+db_cluster_activity_stream_kms_key_id = ""
+db_cluster_activity_stream_mode       = "async"
+db_cluster_parameter_group_parameters = []
+db_parameter_group_parameters         = []
+
+# DB subnet group name (can contain placeholders like ${context.app.id})
+db_subnet_group_name = ""
+
+enabled_cloudwatch_logs_exports = []
+endpoints                       = {}
+engine                          = "aurora-mysql"
+engine_version                  = "8.0"
+group_family                    = "aurora-mysql8.0"
+instances = {
+  "1": {
+    "db_parameter_group_name": "default.aurora-mysql8.0",
+    "instance_class": "db.r5.2xlarge",
+    "publicly_accessible": true
+  },
+  "2": {
+    "identifier": "static-member-1",
+    "instance_class": "db.r5.2xlarge"
+  }
+}
+master_password = ""
+master_username = ""
+
+# Resource name (can contain placeholders like ${context.app.id})
+name = ""
+
+# Prefix for all resources
+prefix = ""
+
+region = ""
+
+# AWS Resource Pack git branch
+resource_packs_aws_rev = ""
+
+# AWS Resource Pack git url
+resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+
+secret_key           = ""
+security_group_rules = {}
+skip_final_snapshot  = true
+storage_encrypted    = true
+storage_type         = "aurora"
+subnets              = ""
+type                 = "mysql"
+vpc                  = ""

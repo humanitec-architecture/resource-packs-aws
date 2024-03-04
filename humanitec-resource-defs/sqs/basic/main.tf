@@ -4,13 +4,6 @@ resource "humanitec_resource_definition" "main" {
   name        = "${var.prefix}sqs-basic"
   type        = "sqs"
 
-  provision = {
-    for s in var.policy_classes : "aws-policy.${s}" => {
-      match_dependents = true
-      is_dependent     = false
-    }
-  }
-
   driver_inputs = {
     secrets_string = jsonencode({
       variables = {
@@ -23,15 +16,13 @@ resource "humanitec_resource_definition" "main" {
       source = {
         path = "modules/sqs/basic"
         rev  = var.resource_packs_aws_rev
-        url  = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+        url  = var.resource_packs_aws_url
       }
 
       variables = {
-        region = var.region,
-        # TODO: How to template the queue name?
-        # Name restrictions https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-queues.html
-        # prefix = "${var.prefix}$${context.res.id}"
-        prefix = "${var.prefix}basic-queue"
+        region = var.region
+        prefix = var.prefix
+        name   = var.name
 
         res_id = "$${context.res.id}"
         app_id = "$${context.app.id}"

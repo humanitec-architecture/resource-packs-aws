@@ -1,7 +1,13 @@
 access_key = ""
 app_id     = ""
 env_id     = ""
-prefix     = ""
+
+# Resource name
+name = ""
+
+# Prefix for all resources
+prefix = ""
+
 region     = ""
 res_id     = ""
 secret_key = ""

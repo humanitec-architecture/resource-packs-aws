@@ -30,6 +30,12 @@ variable "res_id" {
   type = string
 }
 
+variable "name" {
+  type        = string
+  description = "Resource name"
+  default     = ""
+}
+
 variable "node_type" {
   description = "AWS ElastiCache node type"
   type        = string
