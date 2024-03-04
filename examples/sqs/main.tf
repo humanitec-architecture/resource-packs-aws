@@ -64,9 +64,9 @@ resource "humanitec_resource_definition_criteria" "iam_policy_sqs_publisher" {
   class                  = local.sqs_publisher_policy_class
 }
 
-## Exposed passthrough resource definition
+## Exposed delegator resource definition
 module "sqs_basic_publisher" {
-  source = "../../humanitec-resource-defs/sqs/passthrough"
+  source = "../../humanitec-resource-defs/sqs/delegator"
 
   prefix = var.prefix
 
@@ -106,9 +106,9 @@ resource "humanitec_resource_definition_criteria" "iam_policy_sqs_consumer" {
   class                  = local.sqs_consumer_policy_class
 }
 
-## Exposed passthrough resource definition
+## Exposed delegator resource definition
 module "sqs_basic_consumer" {
-  source = "../../humanitec-resource-defs/sqs/passthrough"
+  source = "../../humanitec-resource-defs/sqs/delegator"
 
   prefix = var.prefix
 
