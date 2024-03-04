@@ -15,6 +15,8 @@ resources:
     class: basic-publisher
 ```
 
+The Resource Graph is using [delegator resources](https://developer.humanitec.com/platform-orchestrator/examples/resource-graph-patterns/#delegator-resource) to expose shared resources with different access policies.
+
 The workload service account will automatically be assigned the necessary AWS IAM Role with the selected IAM Policy.
 
 <!-- BEGIN_TF_DOCS -->
@@ -40,8 +42,8 @@ The workload service account will automatically be assigned the necessary AWS IA
 | iam\_role\_service\_account | ../../humanitec-resource-defs/iam-role/service-account | n/a |
 | k8s\_service\_account | ../../humanitec-resource-defs/k8s/service-account | n/a |
 | sqs\_basic | ../../humanitec-resource-defs/sqs/basic | n/a |
-| sqs\_basic\_consumer | ../../humanitec-resource-defs/sqs/passthrough | n/a |
-| sqs\_basic\_publisher | ../../humanitec-resource-defs/sqs/passthrough | n/a |
+| sqs\_basic\_consumer | ../../humanitec-resource-defs/sqs/delegator | n/a |
+| sqs\_basic\_publisher | ../../humanitec-resource-defs/sqs/delegator | n/a |
 | workload | ../../humanitec-resource-defs/workload/service-account | n/a |
 
 ## Resources
