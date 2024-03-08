@@ -18,14 +18,14 @@ resources:
 |------|---------|
 | terraform | >= 1.3.0 |
 | aws | ~> 5.0 |
-| humanitec | ~> 0 |
+| humanitec | ~> 1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | aws | ~> 5.0 |
-| humanitec | ~> 0 |
+| humanitec | ~> 1.0 |
 
 ## Modules
 
