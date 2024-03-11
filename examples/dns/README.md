@@ -17,13 +17,13 @@ resources:
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
-| humanitec | ~> 0 |
+| humanitec | ~> 1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| humanitec | ~> 0 |
+| humanitec | ~> 1.0 |
 
 ## Modules
 
