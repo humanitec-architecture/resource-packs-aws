@@ -13,22 +13,6 @@ variable "region" {
   description = "AWS Region to create resources"
 }
 
-variable "humanitec_org_id" {
-  type        = string
-  description = "Humanitec organization where resource definitions will be applied"
-}
-
-variable "humanitec_token" {
-  type        = string
-  description = "Humanitec API token"
-}
-
-variable "humanitec_host" {
-  type        = string
-  default     = "https://api.humanitec.io"
-  description = "Humanitec API host url"
-}
-
 variable "resource_packs_aws_url" {
   description = "AWS Resource Pack git url"
   type        = string

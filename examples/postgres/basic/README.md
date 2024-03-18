@@ -1,14 +1,36 @@
 # Example: postgres resource based on AWS RDS
 
-This example configures a [postgres](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#postgres) Resource Definition using AWS RDS.
-
-The created Resource Definition can be used in your Score file using:
+## Configuration
+This example configures a [postgres](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#postgres) Resource Definition using AWS RDS. A workload using the `postgres` resource to create database instance looks like:
 
 ```yaml
 resources:
   ...
   db:
     type: postgres
+```
+
+## Infrastructure setup
+
+```mermaid
+graph TD;
+  subgraph VPC
+    database["Postgres AWS RDS instance"]
+    subgraph EKS Cluster
+      pod[workload pod]
+    end
+    database -- security group --> pod
+  end
+```
+
+## Orchestrator setup
+
+```mermaid
+graph LR;
+  workload_1 --> db_1["db_1, resource_type: postgres"]
+  workload_2 --> db_2["db_2, resource_type: postgres"]
+  workload_2 --> shared.db_1["shared.db_1, resource_type: postgres"]
+  workload_3 --> shared.db_1["shared.db_1, resource_type: postgres"]
 ```
 
 <!-- BEGIN_TF_DOCS -->
@@ -47,14 +69,11 @@ resources:
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | access\_key | AWS Access Key | `string` | n/a | yes |
-| humanitec\_org\_id | Humanitec organization where resource definitions will be applied | `string` | n/a | yes |
-| humanitec\_token | Humanitec API token | `string` | n/a | yes |
 | k8s\_node\_security\_group\_id | AWS Security Group ID of the kubernetes nodes to allow access to the AWS RDS cluster | `string` | n/a | yes |
 | region | AWS Region to create resources | `string` | n/a | yes |
 | secret\_key | AWS Secret Key | `string` | n/a | yes |
 | subnet\_ids | AWS Subnet IDs to use for the AWS RDS cluster | `set(string)` | n/a | yes |
 | vpc\_id | AWS VPC ID | `string` | n/a | yes |
-| humanitec\_host | Humanitec API host url | `string` | `"https://api.humanitec.io"` | no |
 | name | Name of the example application | `string` | `"hum-rp-postgres-example"` | no |
 | prefix | Prefix of the created resources | `string` | `"hum-rp-postgres-ex-"` | no |
 | resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | `"refs/heads/main"` | no |

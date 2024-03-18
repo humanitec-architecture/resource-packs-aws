@@ -1,14 +1,37 @@
 # Example: redis resource based on AWS ElastiCache
 
-This example configures a [redis](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#redis) Resource Definition using AWS ElastiCache.
-
-The created Resource Definition can be used in your Score file using:
+## Configuration
+This example configures a [redis](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#redis) Resource Definition using AWS ElastiCache. A workload using the `redis` resource to create redis cluster looks like:
 
 ```yaml
 resources:
   ...
   redis:
     type: redis
+```
+
+## Infrastructure setup
+
+```mermaid
+graph TD;
+  subgraph VPC
+    cache["AWS Elasticache"]
+  
+    subgraph EKS Cluster
+      pod[workload pod]
+    end
+  end
+  cache --> pod
+```
+
+## Orchestrator setup
+
+```mermaid
+graph LR;
+  workload_1 --> cache_1["cache_1, resource_type: redis"]
+  workload_2 --> cache_2["cache_2, resource_type: redis"]
+  workload_2 --> shared.cache_1["shared.cache_1, resource_type: redis"]
+  workload_3 --> shared.cache_1["shared.cache_1, resource_type: redis"]
 ```
 
 <!-- BEGIN_TF_DOCS -->

@@ -23,7 +23,4 @@ provider "aws" {
 }
 
 provider "humanitec" {
-  host   = var.humanitec_host
-  org_id = var.humanitec_org_id
-  token  = var.humanitec_token
 }

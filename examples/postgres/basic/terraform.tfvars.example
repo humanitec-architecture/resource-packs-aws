@@ -2,15 +2,6 @@
 # AWS Access Key
 access_key = ""
 
-# Humanitec API host url
-humanitec_host = "https://api.humanitec.io"
-
-# Humanitec organization where resource definitions will be applied
-humanitec_org_id = ""
-
-# Humanitec API token
-humanitec_token = ""
-
 # AWS Security Group ID of the kubernetes nodes to allow access to the AWS RDS cluster
 k8s_node_security_group_id = ""
 
