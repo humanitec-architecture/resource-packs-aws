@@ -1,5 +1,6 @@
 # Example: sqs resource based on AWS SQS
 
+## Configuration
 This example configures a [sqs](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#sqs) Resource Definition using AWS SQS, with two different access policies:
 
 * `basic-publisher` (allowed to send messages)
@@ -15,9 +16,33 @@ resources:
     class: basic-publisher
 ```
 
+## Infrastructure setup
+The workload service account will be automatically assigned to the necessary AWS IAM Role with the selected IAM Policy.
+
+```mermaid
+graph TD;
+  sqs["Amazon SQS queue"]
+  policy["Amazon IAM Policy"]
+  role["Amazon IAM Role"]
+  subgraph EKS Cluster
+    pod[workload pod]
+    service[Service Account]
+  end
+  policy --> sqs
+  policy --> role --> service --> pod
+  sqs --> pod
+```
+
+## Orchestrator setup
 The Resource Graph is using [delegator resources](https://developer.humanitec.com/platform-orchestrator/examples/resource-graph-patterns/#delegator-resource) to expose shared resources with different access policies.
 
-The workload service account will automatically be assigned the necessary AWS IAM Role with the selected IAM Policy.
+```mermaid
+graph LR;
+  workload_1 --> delegator_1["delegator_1, resource_type: sqs", class: basic-publisher] --> shared.sqs_1["shared.sqs_1, resource_type: sqs"]
+  workload_2 --> delegator_2["delegator_2, resource_type: sqs, class: basic-consumer"] --> shared.sqs_1
+  workload_2 --> shared.delegator_1["shared.delegator_1, resource_type: sqs, class: basic-consumer"]
+  workload_3 --> shared.delegator_1 --> shared.sqs_2["shared.sqs_2, resource_type: sqs"]
+```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

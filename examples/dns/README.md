@@ -1,14 +1,37 @@
 # Example: dns resource based on AWS Route 53
 
-This example configures a [dns](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#dns) Resource Definition using AWS Route 53.
-
-The created Resource Definition can be used in your Score file using:
+## Configuration
+This example configures a [dns](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#dns) Resource Definition using AWS Route 53. A workload using the `dns` resource to create dns records looks like:
 
 ```yaml
 resources:
   ...
   dns:
     type: dns
+```
+
+## Infrastructure setup
+
+```mermaid
+graph TD;
+  subgraph AWS Hosted zone
+    record["record"]
+  end
+
+  subgraph EKS Cluster
+    pod[workload pod]
+  end
+  record --> pod
+```
+
+## Orchestrator setup
+
+```mermaid
+graph LR;
+  workload_1 --> dns_1["dns_1, resource_type: dns"]
+  workload_2 --> dns_2["dns_2, resource_type: dns"]
+  workload_2 --> shared.dns_1["shared.dns_1, resource_type: dns"]
+  workload_3 --> shared.dns_1["shared.dns_1, resource_type: dns"]
 ```
 
 <!-- BEGIN_TF_DOCS -->

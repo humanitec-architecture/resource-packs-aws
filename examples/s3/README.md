@@ -1,5 +1,6 @@
 # Example: s3 resource based on AWS S3
 
+## Configuration
 This example configures a [s3](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#s3) Resource Definition using AWS S3, with two different access policies:
 
 * `basic-admin` (full access)
@@ -15,9 +16,33 @@ resources:
     class: basic-admin
 ```
 
+## Infrastructure setup
+The workload service account will be automatically assigned to the necessary AWS IAM Role with the selected IAM Policy.
+
+```mermaid
+graph TD;
+  s3["Amazon S3 bucket"]
+  policy["Amazon IAM Policy"]
+  role["Amazon IAM Role"]
+  subgraph EKS Cluster
+    pod[workload pod]
+    service[Service Account]
+  end
+  policy --> s3
+  policy --> role --> service --> pod
+  s3 --> pod
+```
+
+## Orchestrator setup
 The Resource Graph is using [delegator resources](https://developer.humanitec.com/platform-orchestrator/examples/resource-graph-patterns/#delegator-resource) to expose shared resources with different access policies.
 
-The workload service account will automatically be assigned the necessary AWS IAM Role with the selected IAM Policy.
+```mermaid
+graph LR;
+  workload_1 --> delegator_1["delegator_1, resource_type: s3", class: basic-read-only] --> shared.s3_1["shared.s3_1, resource_type: s3"]
+  workload_2 --> delegator_2["delegator_2, resource_type: s3, class: basic-admin"] --> shared.s3_1
+  workload_2 --> shared.delegator_1["shared.delegator_1, resource_type: s3, class: basic-read-only"]
+  workload_3 --> shared.delegator_1 --> shared.s3_2["shared.s3_2, resource_type: s3"]
+```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
