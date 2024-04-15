@@ -1,5 +1,8 @@
-access_key                  = ""
-allocated_storage           = 20
+allocated_storage = 20
+
+# Append Terraform logs to error messages.
+append_logs_to_error = false
+
 backup_retention_period     = 1
 backup_window               = ""
 create_cloudwatch_log_group = false
@@ -10,7 +13,11 @@ database_name               = ""
 # DB subnet group name (can contain placeholders like ${context.app.id})
 db_subnet_group_name = ""
 
-deletion_protection             = false
+deletion_protection = false
+
+# The ID of the Resource Account which should be used.
+driver_account = ""
+
 enabled_cloudwatch_logs_exports = []
 engine                          = "mysql"
 engine_version                  = "8.0"
@@ -45,7 +52,6 @@ resource_packs_aws_rev = ""
 # AWS Resource Pack git url
 resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
 
-secret_key             = ""
 skip_final_snapshot    = true
 subnet_ids             = ""
 type                   = "mysql"

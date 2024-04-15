@@ -1,7 +1,3 @@
-
-# AWS Access Key
-access_key = ""
-
 app_id = ""
 
 # Hosted zone ID for a CloudFront distribution, S3 bucket, ELB, or Route 53 hosted zone.
@@ -25,9 +21,6 @@ name = ""
 region = ""
 
 res_id = ""
-
-# AWS Secret Key
-secret_key = ""
 
 # The subdomain of the DNS name that the DNS record is for.
 subdomain = ""

@@ -1,4 +1,9 @@
-access_key = ""
+
+# Append Terraform logs to error messages.
+append_logs_to_error = false
+
+# The ID of the Resource Account which should be used.
+driver_account = ""
 
 # Name of the exposed policy
 policy = ""
@@ -14,5 +19,3 @@ resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-pac
 
 # The class of the S3 resource
 s3_resource_class = ""
-
-secret_key = ""

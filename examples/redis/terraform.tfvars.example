@@ -1,7 +1,4 @@
 
-# AWS Access Key
-access_key = ""
-
 # AWS Security Group ID of the kubernetes nodes to allow access to the AWS ElastiCache cluster
 k8s_node_security_group_id = ""
 
@@ -19,9 +16,6 @@ resource_packs_aws_rev = "refs/heads/main"
 
 # AWS Resource Pack git url
 resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
-
-# AWS Secret Key
-secret_key = ""
 
 # AWS Subnet IDs to use for the AWS ElastiCache cluster
 subnet_ids = ""

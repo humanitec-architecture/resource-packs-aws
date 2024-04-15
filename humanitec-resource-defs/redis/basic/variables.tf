@@ -14,13 +14,14 @@ variable "resource_packs_aws_rev" {
   type        = string
 }
 
-variable "access_key" {
-  description = "AWS Access Key"
-  type        = string
+variable "append_logs_to_error" {
+  description = "Append Terraform logs to error messages."
+  type        = bool
+  default     = false
 }
 
-variable "secret_key" {
-  description = "AWS Secret Key"
+variable "driver_account" {
+  description = "The ID of the Resource Account which should be used."
   type        = string
 }
 

@@ -23,13 +23,11 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| access\_key | AWS Access Key | `string` | n/a | yes |
 | app\_id | n/a | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
 | hosted\_zone\_id | The id of the hosted zone in which this record set will reside. | `string` | n/a | yes |
 | region | AWS Region | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
-| secret\_key | AWS Secret Key | `string` | n/a | yes |
 | subdomain | The subdomain of the DNS name that the DNS record is for. | `string` | n/a | yes |
 | aws\_hosted\_zone | Hosted zone ID for a CloudFront distribution, S3 bucket, ELB, or Route 53 hosted zone. | `string` | `""` | no |
 | ip\_address | The IPv4 address that the DNS name should resolve to. | `string` | `""` | no |

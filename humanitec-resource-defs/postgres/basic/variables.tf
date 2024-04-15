@@ -18,12 +18,15 @@ variable "region" {
   type = string
 }
 
-variable "access_key" {
-  type = string
+variable "append_logs_to_error" {
+  description = "Append Terraform logs to error messages."
+  type        = bool
+  default     = false
 }
 
-variable "secret_key" {
-  type = string
+variable "driver_account" {
+  description = "The ID of the Resource Account which should be used."
+  type        = string
 }
 
 variable "name" {

@@ -50,13 +50,17 @@ graph LR;
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
+| aws | ~> 5.0 |
 | humanitec | ~> 1.0 |
+| random | ~> 3.5 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
+| aws | ~> 5.0 |
 | humanitec | ~> 1.0 |
+| random | ~> 3.5 |
 
 ## Modules
 
@@ -75,7 +79,10 @@ graph LR;
 
 | Name | Type |
 |------|------|
+| [aws_iam_role.humanitec_provisioner](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy_attachment.humanitec_provisioner](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [humanitec_application.example](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/application) | resource |
+| [humanitec_resource_account.humanitec_provisioner](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_account) | resource |
 | [humanitec_resource_definition_criteria.iam_policy_s3_admin](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.iam_policy_s3_read_only](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.iam_role_service_account](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
@@ -84,15 +91,15 @@ graph LR;
 | [humanitec_resource_definition_criteria.s3_basic_admin](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.s3_basic_read_only](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.workload](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
+| [random_password.external_id](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
+| [aws_iam_policy_document.instance_assume_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| access\_key | AWS Access Key | `string` | n/a | yes |
 | cluster\_name | Name of the EKS cluster | `string` | n/a | yes |
 | region | AWS Region | `string` | n/a | yes |
-| secret\_key | AWS Secret Key | `string` | n/a | yes |
 | name | Name of the example application | `string` | `"hum-rp-s3-example"` | no |
 | prefix | Prefix of the created resources | `string` | `"hum-rp-s3-ex-"` | no |
 | resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | `"refs/heads/main"` | no |
