@@ -25,7 +25,6 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| access\_key | n/a | `string` | n/a | yes |
 | app\_id | n/a | `string` | n/a | yes |
 | cluster\_name | n/a | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
@@ -34,7 +33,6 @@
 | prefix | Prefix for all resources | `string` | n/a | yes |
 | region | n/a | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
-| secret\_key | n/a | `string` | n/a | yes |
 | name | Resource name | `string` | `""` | no |
 
 ## Outputs

@@ -1,6 +1,5 @@
-access_key = ""
-app_id     = ""
-env_id     = ""
+app_id = ""
+env_id = ""
 
 # Resource name
 name = ""
@@ -8,6 +7,5 @@ name = ""
 # Prefix for all resources
 prefix = ""
 
-region     = ""
-res_id     = ""
-secret_key = ""
+region = ""
+res_id = ""

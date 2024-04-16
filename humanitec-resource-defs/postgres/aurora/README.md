@@ -22,16 +22,16 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| access\_key | n/a | `string` | n/a | yes |
 | database\_name | n/a | `string` | n/a | yes |
+| driver\_account | The ID of the Resource Account which should be used. | `string` | n/a | yes |
 | master\_password | n/a | `string` | n/a | yes |
 | master\_username | n/a | `string` | n/a | yes |
 | prefix | Prefix for all resources | `string` | n/a | yes |
 | region | n/a | `string` | n/a | yes |
 | resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | n/a | yes |
-| secret\_key | n/a | `string` | n/a | yes |
 | subnets | n/a | `set(string)` | n/a | yes |
 | vpc | n/a | `string` | n/a | yes |
+| append\_logs\_to\_error | Append Terraform logs to error messages. | `bool` | `false` | no |
 | apply\_immediately | n/a | `bool` | `true` | no |
 | create\_cloudwatch\_log\_group | n/a | `bool` | `false` | no |
 | create\_db\_cluster\_activity\_stream | n/a | `bool` | `false` | no |

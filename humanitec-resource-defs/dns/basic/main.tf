@@ -4,19 +4,23 @@ resource "humanitec_resource_definition" "main" {
   name        = "${var.prefix}route53"
   type        = "dns"
 
+  driver_account = var.driver_account
   driver_inputs = {
-    secrets_string = jsonencode({
-      variables = {
-        access_key = var.access_key
-        secret_key = var.secret_key
-      }
-    })
-
     values_string = jsonencode({
       source = {
         path = "modules/dns/basic"
         rev  = var.resource_packs_aws_rev
         url  = var.resource_packs_aws_url
+      }
+
+      append_logs_to_error = var.append_logs_to_error
+
+      credentials_config = {
+        environment = {
+          AWS_ACCESS_KEY_ID     = "AccessKeyId"
+          AWS_SECRET_ACCESS_KEY = "SecretAccessKey"
+          AWS_SESSION_TOKEN     = "SessionToken"
+        }
       }
 
       variables = {

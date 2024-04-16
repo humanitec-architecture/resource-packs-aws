@@ -1,6 +1,9 @@
 
-# AWS Access Key
-access_key = ""
+# Append Terraform logs to error messages.
+append_logs_to_error = false
+
+# The ID of the Resource Account which should be used.
+driver_account = ""
 
 # Resource name (can contain placeholders like ${context.app.id})
 name = ""
@@ -25,9 +28,6 @@ resource_packs_aws_rev = ""
 
 # AWS Resource Pack git url
 resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
-
-# AWS Secret Key
-secret_key = ""
 
 # List of AWS security group IDs to use for the AWS ElastiCache cluster
 security_group_ids = ""

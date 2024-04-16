@@ -1,4 +1,3 @@
-access_key                            = ""
 app_id                                = ""
 apply_immediately                     = true
 create_cloudwatch_log_group           = false
@@ -41,7 +40,6 @@ prefix = ""
 
 region               = ""
 res_id               = ""
-secret_key           = ""
 security_group_rules = {}
 skip_final_snapshot  = true
 storage_encrypted    = true

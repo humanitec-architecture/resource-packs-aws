@@ -22,13 +22,13 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| access\_key | AWS Access Key | `string` | n/a | yes |
+| driver\_account | The ID of the Resource Account which should be used. | `string` | n/a | yes |
 | prefix | Prefix for all resources | `string` | n/a | yes |
 | region | AWS Region | `string` | n/a | yes |
 | resource\_packs\_aws\_rev | AWS Resource Pack git branch | `string` | n/a | yes |
-| secret\_key | AWS Secret Key | `string` | n/a | yes |
 | security\_group\_ids | List of AWS security group IDs to use for the AWS ElastiCache cluster | `set(string)` | n/a | yes |
 | subnet\_group\_name | Name of the AWS ElastiCache subnet group to use | `string` | n/a | yes |
+| append\_logs\_to\_error | Append Terraform logs to error messages. | `bool` | `false` | no |
 | name | Resource name (can contain placeholders like ${context.app.id}) | `string` | `""` | no |
 | node\_type | AWS ElastiCache node type | `string` | `"cache.t4g.micro"` | no |
 | num\_cache\_clusters | Number of AWS ElastiCache clusters | `number` | `1` | no |

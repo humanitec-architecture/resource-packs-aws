@@ -25,13 +25,11 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| access\_key | AWS Access Key | `string` | n/a | yes |
 | app\_id | n/a | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
 | prefix | Prefix for all resources | `string` | n/a | yes |
 | region | AWS Region | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
-| secret\_key | AWS Secret Key | `string` | n/a | yes |
 | security\_group\_ids | List of AWS security group IDs to use for the AWS ElastiCache cluster | `set(string)` | n/a | yes |
 | subnet\_group\_name | Name of the AWS ElastiCache subnet group to use | `string` | n/a | yes |
 | name | Resource name | `string` | `""` | no |

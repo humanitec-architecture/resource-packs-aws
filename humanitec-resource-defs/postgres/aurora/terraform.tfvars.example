@@ -1,4 +1,7 @@
-access_key                            = ""
+
+# Append Terraform logs to error messages.
+append_logs_to_error = false
+
 apply_immediately                     = true
 create_cloudwatch_log_group           = false
 create_db_cluster_activity_stream     = false
@@ -11,6 +14,9 @@ db_parameter_group_parameters         = []
 
 # DB subnet group name (can contain placeholders like ${context.app.id})
 db_subnet_group_name = ""
+
+# The ID of the Resource Account which should be used.
+driver_account = ""
 
 enabled_cloudwatch_logs_exports = []
 endpoints                       = {}
@@ -45,7 +51,6 @@ resource_packs_aws_rev = ""
 # AWS Resource Pack git url
 resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
 
-secret_key           = ""
 security_group_rules = {}
 skip_final_snapshot  = true
 storage_encrypted    = true

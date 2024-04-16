@@ -1,15 +1,12 @@
 
-# AWS Access Key
-access_key = ""
-
 # Name of the EKS cluster
 cluster_name = ""
 
 # Name of the example application
-name = "hum-rp-s3-example"
+name = "hum-rp-sqs-example"
 
 # Prefix of the created resources
-prefix = "hum-rp-s3-ex-"
+prefix = "hum-rp-sqs-ex-"
 
 # AWS Region
 region = ""
@@ -19,6 +16,3 @@ resource_packs_aws_rev = "refs/heads/main"
 
 # AWS Resource Pack git url
 resource_packs_aws_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
-
-# AWS Secret Key
-secret_key = ""

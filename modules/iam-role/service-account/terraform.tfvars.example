@@ -1,4 +1,3 @@
-access_key   = ""
 app_id       = ""
 cluster_name = ""
 env_id       = ""
@@ -12,6 +11,5 @@ policy_arns = ""
 # Prefix for all resources
 prefix = ""
 
-region     = ""
-res_id     = ""
-secret_key = ""
+region = ""
+res_id = ""

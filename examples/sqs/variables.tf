@@ -1,13 +1,3 @@
-variable "access_key" {
-  description = "AWS Access Key"
-  type        = string
-}
-
-variable "secret_key" {
-  description = "AWS Secret Key"
-  type        = string
-}
-
 variable "region" {
   description = "AWS Region"
   type        = string
@@ -33,11 +23,11 @@ variable "resource_packs_aws_rev" {
 variable "name" {
   description = "Name of the example application"
   type        = string
-  default     = "hum-rp-s3-example"
+  default     = "hum-rp-sqs-example"
 }
 
 variable "prefix" {
   description = "Prefix of the created resources"
   type        = string
-  default     = "hum-rp-s3-ex-"
+  default     = "hum-rp-sqs-ex-"
 }

@@ -6,14 +6,6 @@ variable "region" {
   type = string
 }
 
-variable "access_key" {
-  type = string
-}
-
-variable "secret_key" {
-  type = string
-}
-
 variable "s3_bucket_arn" {
   type = string
 }

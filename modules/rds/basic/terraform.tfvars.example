@@ -1,4 +1,3 @@
-access_key                  = ""
 allocated_storage           = 20
 app_id                      = ""
 backup_retention_period     = 1
@@ -41,7 +40,6 @@ prefix = ""
 
 region                 = ""
 res_id                 = ""
-secret_key             = ""
 skip_final_snapshot    = true
 subnet_ids             = ""
 username               = ""
