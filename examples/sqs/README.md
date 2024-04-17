@@ -1,6 +1,13 @@
+---
+features:
+- workload-identity
+- multiple-access-classes
+--- 
+
 # Example: sqs resource based on AWS SQS
 
 ## Configuration
+
 This example configures a [sqs](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#sqs) Resource Definition using AWS SQS, with two different access policies:
 
 * `basic-publisher` (allowed to send messages)
@@ -17,6 +24,7 @@ resources:
 ```
 
 ## Infrastructure setup
+
 The workload service account will be automatically assigned to the necessary AWS IAM Role with the selected IAM Policy.
 
 ```mermaid
@@ -34,6 +42,7 @@ graph TD;
 ```
 
 ## Orchestrator setup
+
 The Resource Graph is using [delegator resources](https://developer.humanitec.com/platform-orchestrator/examples/resource-graph-patterns/#delegator-resource) to expose shared resources with different access policies.
 
 ```mermaid
@@ -44,8 +53,10 @@ graph LR;
   workload_3 --> shared.delegator_1 --> shared.sqs_2["shared.sqs_2, resource_type: sqs"]
 ```
 
+## Terraform docs
+
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
@@ -54,7 +65,7 @@ graph LR;
 | humanitec | ~> 1.0 |
 | random | ~> 3.5 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
@@ -62,7 +73,7 @@ graph LR;
 | humanitec | ~> 1.0 |
 | random | ~> 3.5 |
 
-## Modules
+### Modules
 
 | Name | Source | Version |
 |------|--------|---------|
@@ -75,7 +86,7 @@ graph LR;
 | sqs\_basic\_publisher | ../../humanitec-resource-defs/sqs/delegator | n/a |
 | workload | ../../humanitec-resource-defs/workload/service-account | n/a |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
@@ -94,7 +105,7 @@ graph LR;
 | [random_password.external_id](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 | [aws_iam_policy_document.instance_assume_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|

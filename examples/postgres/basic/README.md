@@ -1,6 +1,7 @@
 # Example: postgres resource based on AWS RDS
 
 ## Configuration
+
 This example configures a [postgres](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#postgres) Resource Definition using AWS RDS. A workload using the `postgres` resource to create database instance looks like:
 
 ```yaml
@@ -33,8 +34,10 @@ graph LR;
   workload_3 --> shared.db_1["shared.db_1, resource_type: postgres"]
 ```
 
+## Terraform docs
+
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
@@ -43,7 +46,7 @@ graph LR;
 | humanitec | ~> 1.0 |
 | random | ~> 3.5 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
@@ -51,13 +54,13 @@ graph LR;
 | humanitec | ~> 1.0 |
 | random | ~> 3.5 |
 
-## Modules
+### Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | postgres | ../../../humanitec-resource-defs/postgres/basic | n/a |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
@@ -71,7 +74,7 @@ graph LR;
 | [random_password.external_id](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 | [aws_iam_policy_document.instance_assume_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|

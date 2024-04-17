@@ -1,18 +1,18 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
 | aws | ~> 5.0 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
 | aws | ~> 5.0 |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
@@ -21,7 +21,7 @@
 | [aws_iam_role_policy_attachment.policies](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_policy_document.assume_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -35,7 +35,7 @@
 | res\_id | n/a | `string` | n/a | yes |
 | name | Resource name | `string` | `""` | no |
 
-## Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|

@@ -1,18 +1,18 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
 | aws | ~> 5.0 |
 
-## Modules
+### Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | db | terraform-aws-modules/rds/aws | 6.3.0 |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -54,7 +54,7 @@
 | port | n/a | `number` | `5432` | no |
 | skip\_final\_snapshot | n/a | `bool` | `true` | no |
 
-## Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|

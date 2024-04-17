@@ -1,6 +1,7 @@
 # Example: redis resource based on AWS ElastiCache
 
 ## Configuration
+
 This example configures a [redis](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#redis) Resource Definition using AWS ElastiCache. A workload using the `redis` resource to create redis cluster looks like:
 
 ```yaml
@@ -34,8 +35,10 @@ graph LR;
   workload_3 --> shared.cache_1["shared.cache_1, resource_type: redis"]
 ```
 
+## Terraform docs
+
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
@@ -44,7 +47,7 @@ graph LR;
 | humanitec | ~> 1.0 |
 | random | ~> 3.5 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
@@ -52,13 +55,13 @@ graph LR;
 | humanitec | ~> 1.0 |
 | random | ~> 3.5 |
 
-## Modules
+### Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | redis | ../../humanitec-resource-defs/redis/basic | n/a |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
@@ -73,7 +76,7 @@ graph LR;
 | [random_password.external_id](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 | [aws_iam_policy_document.instance_assume_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
