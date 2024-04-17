@@ -1,25 +1,25 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
 | aws | ~> 5.0 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
 | aws | ~> 5.0 |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
 | [aws_route53_record.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_zone.hosted_zone](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/route53_zone) | data source |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -34,7 +34,7 @@
 | ipv6\_address | The IPv6 address that the DNS name should resolve to. | `string` | `""` | no |
 | name | A valid fully qualified domain name that the DNS name should resolve to. | `string` | `""` | no |
 
-## Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|

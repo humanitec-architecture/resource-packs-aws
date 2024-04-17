@@ -1,19 +1,19 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
 | aws | ~> 5.0 |
 
-## Modules
+### Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | aurora | terraform-aws-modules/rds-aurora/aws | 9.0.0 |
 | kms | terraform-aws-modules/kms/aws | ~> 2.1 |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -48,7 +48,7 @@
 | storage\_encrypted | n/a | `bool` | `true` | no |
 | storage\_type | n/a | `string` | `"aurora"` | no |
 
-## Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|

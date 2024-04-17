@@ -1,5 +1,5 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
@@ -7,21 +7,21 @@
 | aws | ~> 5.0 |
 | random | ~> 3.5 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
 | aws | ~> 5.0 |
 | random | ~> 3.5 |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
 | [aws_elasticache_replication_group.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_replication_group) | resource |
 | [random_password.auth_token](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -38,7 +38,7 @@
 | parameter\_group\_name | AWS ElastiCache parameter group name | `string` | `"default.redis7.cluster.on"` | no |
 | port | Port to use for the AWS ElastiCache cluster | `number` | `6379` | no |
 
-## Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|

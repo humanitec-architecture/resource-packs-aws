@@ -1,24 +1,24 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
 | humanitec | ~> 1.0 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
 | humanitec | ~> 1.0 |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
 | [humanitec_resource_definition.main](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -62,7 +62,7 @@
 | skip\_final\_snapshot | n/a | `bool` | `true` | no |
 | type | n/a | `string` | `"mysql"` | no |
 
-## Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|
