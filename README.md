@@ -12,6 +12,7 @@ You can find more details about Resource Packs and how to use them [inside the H
 
 The following resources are included:
 
+* [config/imagepullsecret](./humanitec-resource-defs/config/imagepullsecret): A `config` resource that configures [imagePullSecret](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod) injection.
 * [dns/basic](./humanitec-resource-defs/dns/basic): A `dns` resource using Route 53.
 * [iam-policy/ecr-create-repository](./humanitec-resource-defs/iam-policy/ecr-create-repository): IAM policy for to create ECR repositories.
 * [iam-policy/s3](./humanitec-resource-defs/iam-policy/s3): IAM policy for for an S3 bucket.

@@ -1,0 +1,104 @@
+ecr-registry-helper-secret.yaml:
+  data:
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: ecr-registry-helper
+    stringData:
+      AWS_ACCESS_KEY_ID: {{ .driver.secrets.AWS_ACCESS_KEY_ID | quote }}
+      AWS_SECRET_ACCESS_KEY: {{ .driver.secrets.AWS_SECRET_ACCESS_KEY | quote }}
+      AWS_ACCOUNT: {{ .driver.values.aws_account_id | quote }}
+  location: namespace
+ecr-registry-helper-configmap.yaml:
+  data:
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: ecr-registry-helper
+    data:
+      AWS_REGION: {{ .driver.values.aws_region | quote }}
+      DOCKER_SECRET_NAME: {{ .driver.values.secret_name | quote }}
+      NAMESPACE_NAME: {{ .driver.values.namespace | quote }}
+  location: namespace
+ecr-registry-helper-job.yaml:
+  data:
+    apiVersion: batch/v1
+    kind: Job
+    metadata:
+      name: ecr-registry-helper-initial
+    spec:
+      template:
+        spec:
+          serviceAccountName: ecr-registry-helper
+          containers:
+          - name: ecr-registry-helper
+            image: ghcr.io/humanitec-architecture/aws-ecr-credentials-refresh
+            envFrom:
+              - secretRef:
+                  name: ecr-registry-helper
+              - configMapRef:
+                  name: ecr-registry-helper
+          restartPolicy: Never
+  location: namespace
+ecr-registry-helper-cronjob.yaml:
+  data:
+    apiVersion: batch/v1
+    kind: CronJob
+    metadata:
+      name: ecr-registry-helper
+    spec:
+      schedule: "0 */10 * * *"
+      successfulJobsHistoryLimit: 3
+      suspend: false
+      jobTemplate:
+        spec:
+          template:
+            spec:
+              serviceAccountName: ecr-registry-helper
+              containers:
+              - name: ecr-registry-helper
+                image: ghcr.io/humanitec-architecture/aws-ecr-credentials-refresh
+                envFrom:
+                  - secretRef:
+                      name: ecr-registry-helper
+                  - configMapRef:
+                      name: ecr-registry-helper
+              restartPolicy: Never
+  location: namespace
+ecr-registry-helper-serviceaccount.yaml:
+  data:
+    apiVersion: v1
+    kind: ServiceAccount
+    metadata:
+      name: ecr-registry-helper
+  location: namespace
+ecr-registry-helper-role.yaml:
+  data:
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: Role
+    metadata:
+      name: ecr-registry-helper
+    rules:
+    - apiGroups: [""]
+      resources: ["secrets"]
+      resourceNames: [{{ .driver.values.secret_name | quote }}]
+      verbs: ["delete"]
+    - apiGroups: [""]
+      resources: ["secrets"]
+      verbs: ["create"]
+  location: namespace
+ecr-registry-helper-rolebinding.yaml:
+  data:
+    kind: RoleBinding
+    apiVersion: rbac.authorization.k8s.io/v1
+    metadata:
+      name: ecr-registry-helper
+    subjects:
+    - kind: ServiceAccount
+      name: ecr-registry-helper
+      apiGroup: ""
+    roleRef:
+      kind: Role
+      name: ecr-registry-helper
+      apiGroup: ""
+  location: namespace
