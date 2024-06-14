@@ -1,0 +1,15 @@
+
+# AWS Access Key ID (Secret Store reference)
+access_key_id_ref = ""
+
+# The id of the hosted zone in which this record set will reside.
+account_id = ""
+
+# Prefix for all resources
+prefix = ""
+
+# AWS Region
+region = ""
+
+# AWS Secret Access Key (Secret Store reference)
+secret_access_key_ref = ""

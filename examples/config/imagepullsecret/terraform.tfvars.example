@@ -1,0 +1,12 @@
+
+# Humanitec Secret Store ID that points to AWS Secrets Manager
+humanitec_secret_store_id = ""
+
+# Name of the example application
+name = "hum-rp-ips-example"
+
+# Prefix of the created resources
+prefix = "hum-rp-ips-ex-"
+
+# AWS Region
+region = ""
