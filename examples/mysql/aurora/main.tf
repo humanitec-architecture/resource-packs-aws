@@ -2,7 +2,7 @@
 
 locals {
   admin_policy_arn   = "arn:aws:iam::aws:policy/AdministratorAccess"
-  humanitec_user_arn = "arn:aws:iam::767398028804:user/humanitec"
+  humanitec_user_arn = "arn:aws:iam::360308478938:user/humanitec"
 }
 
 resource "random_password" "external_id" {
